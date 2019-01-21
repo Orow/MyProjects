@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SurveyForm-diving</title>
+</head>
+<style>
+    body{
+        font-family: 'Raleway', Helvetica, sans-serif;
+        background-color: #a9d7d1;
+        text-align: center;
+        font-weight: normal;
+
+    }
+    .container{
+        background-color: rgb(250, 250, 250);
+        margin: 0 auto;
+        padding: 15px;
+        border-radius: 5px;
+        max-width: 700px;
+   
+    }
+    .row{
+        margin-bottom: 10px;
+
+    }
+    .labels{
+        width: 40%;
+        text-align: right;
+        margin-right: 8px;
+        vertical-align: top;
+        display: inline-block;
+        line-height: 27px;
+
+    }
+    .right{
+        width: 47%;
+        text-align: left;
+        vertical-align: middle;
+        display: inline-block;
+
+    }
+    .input-field{
+        padding: 4px;
+        width: 250px;
+    }
+    .dropdown{
+        padding: 4px;
+    }
+    .radio, .checkbox{
+        margin-left: -42px;
+        padding-bottom: 3px;
+    }
+    .btn-block ul{
+        margin-top: 3px;
+        list-style: none;
+    }
+    #submit{
+        background-color: #59ace0;
+        border-radius: 4px;
+        color: white;
+        height: 36px;
+        width: 96px;
+        margin: 10px;
+        border: 0px solid;
+    }
+
+</style>
+<body>
+    <h1>Survey Form</h1>
+    <div class="container">
+        <p id="description">
+            Let us know what diving skills you want to improve
+        </p>
+        <form action="/survey-diving_skills">
+            <div class="row">
+                <div class="labels">
+                    <label for="name">*Name:</label>
+                </div>
+                <div class="right">
+                    <input type="text" class="input-field" name="name" placeholder="Enter your name" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="labels">
+                    <label for="email">*Email:</label>
+                </div>
+                <div class="right">
+                    <input type="email" class="input-field" name="email" placeholder="Enter your email" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="labels">
+                    <label for="age">*Age:</label>
+                </div>
+                <div class="right">
+                    <input type="number" class="input-field" name="age" placeholder="Age" max="80" min="5" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="labels">
+                    <label for="currentPos">Choose your current role</label>
+                </div>
+                <div class="right">
+                    <select class="dropdown" name="currentPos">
+                        <option disabled selected value=>Select an option</option>
+                        <option value="NoC-card">No Certification</option>
+                        <option value="scuba">Scuba Diver</option>
+                        <option value="ow">OpenWater Diver</option>
+                        <option value="aow">Advanced Diver</option>
+                        <option value="specialty">Specialty Diver</option>
+                        <option value="masterscuba">Master Scuba Diver</option>
+                        <option value="divemaster">Dive Master</option>
+                        <option value="instructor">Instructor</option>
+                        <option value="instructortrainer">Instructor Trainer</option>
+                        <option value="coursedirector">Course Director</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="labels">
+                    <label for="UserRating">How likely is that you would recommend scuba diving to your friends?</label>
+                </div>
+                <div class="right btn-block">
+                    <ul>
+                        <li class="radio">
+                            <input type="radio" value="1" class="list" name="radio-button">Definitely
+                        </li>
+                        <li class="radio">
+                            <input type="radio" value="2" class="list" name="radio-button">Maybe
+                        </li>
+                        <li class="radio">
+                            <input type="radio" value="3" class="list" name="radio-button">Not sure
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="labels">
+                    <label for="mostlike">Whihc place do you like to go diving:</label>
+                </div>
+                <div class="right">
+                    <select class="dropdown" name="MostLike">
+                        <option disabled selected value=>Select an option</option>
+                        <option value="GrennIsland">Grenn Island</option>
+                        <option value="OrchidIsland">Orchid Island</option>
+                        <option value="Liuchiu">Liuchiu</option>
+                        <option value="Kenting">Kenting</option>
+                        <option value="Cebu">Cebu</option>
+                        <option value="Elnido/Coron">Elnido/Coron</option>
+                        <option value="Okinawa">Okinawa</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="labels">
+                    <label for="preferences">What kind of diving you like?</label>
+                </div>
+                <div class="right btn-block">
+                    <ul style="list-style: none">
+                        <li class="checkbox">
+                            <input type="checkbox" class="list" name="prefer" value="1">Deep Dive
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" class="list" name="prefer" value="2">Night Dive
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" class="list" name="prefer" value="3">Ice Dive
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" class="list" name="prefer" value="4">Drift Dive
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" class="list" name="prefer" value="5">Tech Dive
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" class="list" name="prefer" value="6">Cave Dive
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="labels">
+                    <label for="comments">Any Comments or Suggestions?</label>
+                </div>
+                <div class="right">
+                    <textarea class="input-field" name="comments" placeholder="Enter your comment or suggestion here..."></textarea>
+                </div>
+            </div>
+            
+            <button id="submit" type="submit">Submit</button>
+        
+        </form>
+    </div>
+    
+</body>
+</html>

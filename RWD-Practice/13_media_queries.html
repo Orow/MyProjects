@@ -15,13 +15,27 @@
         text-align: center;
         padding-top: 100px;
     }
+
+    h1 {
+        display: none;
+    }
+    /* Smartphoe */
+    @media(max-width: 500px) {
+        body {
+            background: red;
+        }
+
+        #smartphone h1 {
+            display: block;
+        }
+    }
 </style>
 
 <body>
      <div id="widescreen"><h1>Widescreen</h1></div>
      <div id="normal"><h1>Normal</h1></div>
      <div id="tablet"></div><h1>Tablet</h1></div>
-     <div id="samrtphone"><h1>Samrtphone</h1></div>
+     <div id="smartphone"><h1>Samrtphone</h1></div>
      <div id="landscape"><h1>Landscape</h1></div>
 </body>
 </html>

@@ -27,3 +27,17 @@
     float: none;
     width: 100%;
 }
+
+/* About info */
+#about-info .info-right, #about-info .info-left  {
+    float: noene;
+    width: 100%;
+}
+
+.l-heading {
+    text-align: center;
+}
+
+#about-info .info-right {
+    margin-top: 30px;
+}

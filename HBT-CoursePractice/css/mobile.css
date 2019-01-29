@@ -11,3 +11,13 @@
     padding: 5px;
     border-bottom: #444 dotted 1px;
 }
+
+/* Home info */
+#home-info .info-img {
+    display: none;
+}
+
+#home-info .info-content {
+    float: none;
+    width: 100%;
+}

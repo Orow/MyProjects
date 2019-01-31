@@ -8,6 +8,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
 }
 
 a { 
@@ -33,6 +34,20 @@ p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
 }
+
+.btn {
+    display: inline-block;
+    color: #fff;
+    background: #93cb52;
+    padding: 0.6rem 2rem;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #7ab436;
+}
+
+
 
 /* Navbar */
 #navbar {

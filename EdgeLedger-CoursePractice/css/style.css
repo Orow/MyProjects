@@ -91,6 +91,11 @@ p {
     list-style: none;
 }
 
+.list li {
+    padding: 0.5rem 0;
+    border-bottom: #444 dotted 1px;
+}
+
 /* Navbar */
 #navbar {
     display: flex;

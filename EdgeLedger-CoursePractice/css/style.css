@@ -20,6 +20,13 @@ p {
 }
 
 /* Utility Classes */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
 .text-primary {
     color: #93cb52;
 }

@@ -147,7 +147,7 @@ p {
     padding: 0 2rem;
     /* Overlay */
     position: absolute;
-    top: 60px;
+    top: 65px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -215,7 +215,7 @@ p {
 }
 
 #contact .contact-form input,
-#contact .contact-from textarea {
+#contact .contact-form textarea {
     width: 100%;
     padding: 0.5rem;
 }

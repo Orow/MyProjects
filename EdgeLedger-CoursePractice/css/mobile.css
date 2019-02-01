@@ -36,4 +36,12 @@
     #showcase .showcase-content {
         top: 110px;
     }
+
+    #who {
+        display: block;
+    }
+
+    #who .who-img {
+        display: none;
+    }
 }

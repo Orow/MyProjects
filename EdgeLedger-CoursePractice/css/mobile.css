@@ -1,3 +1,8 @@
+#what .items {
+    display: block;
+    padding: 1rem;
+}
+
 /* Align icon to left */
 #what .items .item {
     display: flex;

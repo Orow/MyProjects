@@ -52,4 +52,13 @@
     #clients .items div:last-child {
         display: none;
     }
+
+    #contact {
+        flex-direction: column;
+    }
+
+    #contact .map {
+        height: 200px;
+        border-top: 4px solid #333;
+    }
 }

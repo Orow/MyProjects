@@ -48,4 +48,8 @@
     #clients .items img {
         width: 80%;
     }
+
+    #clients .items div:last-child {
+        display: none;
+    }
 }

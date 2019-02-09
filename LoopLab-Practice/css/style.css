@@ -6,6 +6,10 @@
 
 /* body */
 
+body {
+    background: #333;
+    color: #fff;
+}
 a {
     text-decoration: none;
 }
@@ -48,12 +52,34 @@ a {
 /* Home Section */
 
 #home-section {
-    background: url(../img/home.jpg) no-repeat center center/cover;
+    background: url(../img/home.jpg) no-repeat ;
     min-height: 700px;
+    background-size: cover;
+    width: 100%;
 }
 
-.home-overlay {
+#home-section .home-overlay {
     background: rgba(0, 0, 0, 0.5);
     min-height: 700px;
-
+    
 }
+
+#home-section .home-inner-section {
+    margin: 0 20px;
+    padding-top: 150px;
+}
+
+.row,
+.home-section-flex {
+    display: flex;
+}
+
+.flex-left {
+    align-self: flex-start;
+}
+
+.flex-right {
+    align-self: flex-end;
+}
+
+

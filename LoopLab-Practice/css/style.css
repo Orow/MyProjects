@@ -44,3 +44,10 @@ a {
 #navbar ul li a:hover {
     color: #fff;
 }
+
+/* Home Section */
+
+#home-section {
+    background: url(../img/home.jpg) no-repeat center center/cover;
+    min-height: 700px;
+}

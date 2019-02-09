@@ -21,8 +21,9 @@ a {
 #navbar .container{
     display: flex;
     justify-content: space-between;
-    background: rgba(0, 0, 0, 0.8);
+    background: #343a40;
     border-bottom: #008ed6 solid 3px;
+    opacity: 0.8;
 }
 
 #navbar ul{

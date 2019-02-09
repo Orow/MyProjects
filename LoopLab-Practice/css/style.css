@@ -21,7 +21,7 @@ a {
 #navbar .container{
     display: flex;
     justify-content: space-between;
-    background: #343a40;
+    background: rgba(0, 0, 0, 0.75);
 }
 
 #navbar ul{
@@ -35,7 +35,10 @@ a {
 }
 
 #navbar ul li a {
-    color: #fff;
+    color: gray;
     padding: 0.6rem;
 }
 
+#navbar ul li a:hover {
+    color: #fff;
+}

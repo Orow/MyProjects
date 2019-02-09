@@ -3,3 +3,39 @@
     margin: 0;
     padding: 0;
 }
+
+/* body */
+
+a {
+    text-decoration: none;
+}
+
+/* Utility classes */
+
+.container {
+    padding: 1rem 3rem;
+}
+
+/* navbar */
+
+#navbar .container{
+    display: flex;
+    justify-content: space-between;
+    background: #343a40;
+}
+
+#navbar ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+#navbar .container .logo a {
+    color: #fff;
+}
+
+#navbar ul li a {
+    color: #fff;
+    padding: 0.6rem;
+}
+

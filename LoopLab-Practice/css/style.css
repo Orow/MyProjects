@@ -9,15 +9,26 @@
 body {
     background: #333;
     color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    
 }
 a {
     text-decoration: none;
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* Utility classes */
 
 .container {
     padding: 1rem 3rem;
+}
+
+h1, h2, h3 {
+    margin-bottom: .5rem;
 }
 
 .p-1 { padding: 3.0rem; }
@@ -75,7 +86,8 @@ a {
 }
 
 .row,
-.home-section-flex {
+.home-section-flex,
+.card-form {
     display: flex;
 }
 
@@ -92,4 +104,21 @@ a {
     color: #008ed6;
     padding: 5px;
     border-radius: 5px;
+}
+
+#home-section .card-form {
+    background: #007bff;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#home-section .card-body {
+    padding: 1.25rem;
+}
+
+.form-group-control {
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+
 }

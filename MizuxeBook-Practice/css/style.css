@@ -1,0 +1,22 @@
+/* Navbar */
+.navbar {
+    font-size: 1.4rem;
+}
+
+.container {
+    padding: 16px 0;
+}
+
+.container img {
+    height: 50px;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+.navbar h3 {
+    display: inline;
+    vertical-align: middle;
+}
+.navbar .nav-item {
+    padding-right: 1.2rem;
+}

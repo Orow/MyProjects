@@ -7,7 +7,7 @@
     padding: 16px 0;
 }
 
-.container img {
+.container .logo {
     height: 50px;
     margin-right: 3px;
     vertical-align: middle;
@@ -23,15 +23,16 @@
 
 /* Showcase */
 #slogan {
-    background: url(../img/mountains.jpg)
+    background: url(../img/mountains.jpg);
+    min-height: 600px;
+    position: relative;
 }
 
 #slogan .overlay {
     background: rgba(50, 146, 166, 0.8);
-    
-}
-
-#slogan .img-book {
-    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
     width: 100%;
 }

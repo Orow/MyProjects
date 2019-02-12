@@ -42,7 +42,7 @@
     width: 100%;
 }
 
-/* Newsletter */
+/* Boxes */
 
 #boxes .card-border {
     border-color: #3292a6;
@@ -55,6 +55,9 @@
 .title-main {
     color: #3292a6;
 }
+.card .card-text {
+    margin-bottom: 1rem;
+}
 
 /* About */
 
@@ -62,4 +65,10 @@
     width:50%;
     margin: 0 auto;
     border-bottom: 1px #ddd solid;
+}
+
+/* Accordion */
+
+.fas {
+    color: #333;
 }

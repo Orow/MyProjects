@@ -44,3 +44,14 @@
 
 /* Newsletter */
 
+#boxes .card-border {
+    border-color: #3292a6;
+}
+
+.card-bg {
+    background: #3292a6;
+}
+
+.title-main {
+    color: #3292a6;
+}

@@ -55,3 +55,11 @@
 .title-main {
     color: #3292a6;
 }
+
+/* About */
+
+.info-header {
+    width:50%;
+    margin: 0 auto;
+    border-bottom: 1px #ddd solid;
+}

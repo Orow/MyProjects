@@ -42,6 +42,12 @@
     width: 100%;
 }
 
+.btn-color:hover {
+    color: #fff;
+    background-color: #297889;
+    border-color: #26707f;
+}
+
 /* Boxes */
 
 #boxes .card-border {

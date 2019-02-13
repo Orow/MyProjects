@@ -48,9 +48,17 @@ body {
 }
 
 /* Create section */
-#explore-section .fas {
+#create-section .fas {
     background: #fff;
     color: #008ed6;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Share section */
+#share-section .fas {
+    background: #333;
+    color: #fff;
     padding: 5px;
     border-radius: 5px;
 }

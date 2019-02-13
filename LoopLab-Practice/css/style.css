@@ -38,3 +38,11 @@ body {
 #home-section .card {
     opacity: 0.8;
 }
+
+/* Explore section */
+#explore-section .fas {
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}

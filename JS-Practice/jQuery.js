@@ -1,4 +1,5 @@
 // jQuery Practice
+// Effects
 // show()
 
 $("button").click(function () {
@@ -15,3 +16,8 @@ $("#clickme").click(funciton(){
         //Animation complete
     });
 });
+
+// Events
+// bind
+// $("#foo").bind("click", function(){
+// => #("#foo").click(function(){

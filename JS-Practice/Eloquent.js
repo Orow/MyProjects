@@ -1,3 +1,5 @@
+//Eloquent Javascritpt
+//Chapter 3 Function
 // -----------------------option arguments 
 // skip var be skip
 function square(x, y) {
@@ -43,9 +45,9 @@ function wrapValue(n) {
 let wrap1 = wrapValue(1);
 let wrap2 = wrapValue(2);
 console.log(wrap1());
-// → 1
-console.log(wrap2());
 // → 2
+console.log(wrap2());
+// → 4
 
 
 // No let or var inside the function

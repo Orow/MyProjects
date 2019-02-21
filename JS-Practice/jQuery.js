@@ -42,3 +42,6 @@ $("p:first").attr("style")
 // -> "Hi" <= 原本p內容是"Hi"
 $("p:first").attr("style", "Hello World")
 // -> "Hello World"
+
+// html()
+$("p:last").html(<h2>123</h2>)

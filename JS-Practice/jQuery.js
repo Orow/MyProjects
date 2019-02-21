@@ -45,3 +45,7 @@ $("p:first").attr("style", "Hello World")
 
 // html()
 $("p:last").html(<h2>123</h2>)
+
+//hasClass()
+$("#mydiv").hasClass("bar")
+//  -> it will return true or false

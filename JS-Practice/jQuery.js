@@ -36,3 +36,9 @@ change();
 //Manipulation
 // addClass()
 $("p").last().addClass("selected");
+
+// attr()
+$("p:first").attr("style")
+// -> "Hi" <= 原本p內容是"Hi"
+$("p:first").attr("style", "Hello World")
+// -> "Hello World"

@@ -32,3 +32,7 @@ $
 $("div").text(str);
 });
 change();
+
+//Manipulation
+// addClass()
+$("p").last().addClass("selected");

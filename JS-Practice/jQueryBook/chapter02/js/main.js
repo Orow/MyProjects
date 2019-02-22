@@ -59,7 +59,7 @@ $(function () {
 // });
 
 
-// ------------animate easing
+// ------------animate easing and after funciton(){}
 $(function () {
     $("#typo .inner")
         .css("top", "-100px")
@@ -67,7 +67,10 @@ $(function () {
             $("#typo .inner").animate({
                 top: "100px"
             }, 1500,
-            "linear"
+            "linear",
+            function(){
+                $("#typo .inner") .animate({top: "0px"}, 500);
+            }
         );
     });
 });

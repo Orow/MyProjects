@@ -31,17 +31,26 @@
 //     $("#typo").css("transform", "rotate(10deg");
 // });
 
-$(function(){
-    $("#typo").on("mouseover", function(){
+$(function () {
+    $("#typo").on("mouseover", function () {
         $("#typo").css({
             color: "#ebc000",
             background: "#ae5e9b"
         });
     });
-    $("#typo").on("mouseout", function(){
+    $("#typo").on("mouseout", function () {
         $("#typo").css({
             color: "",
             background: ""
         });
+    });
+});
+
+$(function () {
+    $("#typo .inner").on("click", function () {
+        $("#typo .inner").animate({
+            opacity: 0,
+            fontsize: "0px"
+        }, 1500);
     });
 });

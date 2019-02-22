@@ -7,15 +7,14 @@ $("button").click(function () {
 });
 
 // animate
-
-$("#clickme").click(funciton(){
-    $("#book").animate({
-        opacity: 0.25,
-        left: "toggle"
-    }, 5000, function(){
-        //Animation complete
-    });
-});
+// $("#clickme").click(funciton(){
+//     $("#book").animate({
+//         opacity: 0.25,
+//         left: "toggle"
+//     }, 5000, function(){
+//         //Animation complete
+//     });
+// });
 
 // Events
 // bind

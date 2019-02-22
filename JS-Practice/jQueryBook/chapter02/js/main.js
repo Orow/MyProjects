@@ -26,7 +26,22 @@
 //     });
 // });
 
+// $(function(){
+//     $("#typo").css("color", "#ebc000");
+//     $("#typo").css("transform", "rotate(10deg");
+// });
+
 $(function(){
-    $("#typo").css("color", "#ebc000");
-    $("#typo").css("transform", "rotate(10deg");
+    $("#typo").on("mouseover", function(){
+        $("#typo").css({
+            color: "#ebc000",
+            background: "#ae5e9b"
+        });
+    });
+    $("#typo").on("mouseout", function(){
+        $("#typo").css({
+            color: "",
+            background: ""
+        });
+    });
 });

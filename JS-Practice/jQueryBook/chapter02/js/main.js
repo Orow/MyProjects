@@ -26,11 +26,13 @@
 //     });
 // });
 
+// -----css
 // $(function(){
 //     $("#typo").css("color", "#ebc000");
 //     $("#typo").css("transform", "rotate(10deg");
 // });
 
+// -----on
 $(function () {
     $("#typo").on("mouseover", function () {
         $("#typo").css({
@@ -46,11 +48,26 @@ $(function () {
     });
 });
 
+// ---------animate
+// $(function () {
+//     $("#typo .inner").on("click", function () {
+//         $("#typo .inner").animate({
+//             opacity: 0,
+//             fontsize: "0px"
+//         }, 1500);
+//     });
+// });
+
+
+// ------------animate easing
 $(function () {
-    $("#typo .inner").on("click", function () {
-        $("#typo .inner").animate({
-            opacity: 0,
-            fontsize: "0px"
-        }, 1500);
+    $("#typo .inner")
+        .css("top", "-100px")
+        .on("click", function() {
+            $("#typo .inner").animate({
+                top: "100px"
+            }, 1500,
+            "linear"
+        );
     });
 });

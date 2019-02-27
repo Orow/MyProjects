@@ -1,3 +1,5 @@
+
+
 /* Navbar */
 .navbar .nav-link {
     font-size: 14px;
@@ -8,3 +10,12 @@
 .navbar .nav-item.active {
     border-left: #444 3px solid;
 }
+
+/* Showcase slider */
+.carousel-item {
+    height: 450px;
+}
+#myCarousel img {
+    background-size: cover;
+}
+

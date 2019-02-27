@@ -1,3 +1,4 @@
+
 /* Navbar */
 .navbar .nav-link {
     font-size: 14px;
@@ -24,11 +25,23 @@
     position: relative;
 }
 
-#home-header .overlay {
+.overlay {
     background: rgba(0, 0, 0, 0.7);
     top:0;
     left:0;
     position: absolute;
     width: 100%;
     height: 100%;
+}
+
+/* Video play */
+#video-play {
+    position: relative;
+    min-height: 200px;
+    background: url(../img/media.jpg) no-repeat fixed;
+    background-position: 0 -300px;
+}
+
+#video-play a {
+    text-decoration: none;
 }

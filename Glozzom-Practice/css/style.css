@@ -58,6 +58,7 @@
     height:200px;
     padding-top: 50px;
     background-position: 0 -360px;
+    border-bottom: #eee 1px solid;
 }
 /* About section */
 .about-img {

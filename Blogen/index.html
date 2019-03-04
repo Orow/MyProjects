@@ -70,7 +70,7 @@
         </div>
     </header>
     <!-- Actions -->
-    <section id="actions" class="py-4 bg-light">
+    <section id="actions" class="py-4 bg-light mb-4">
         <div class="container">
             <div class="row">
                 <div class="col-3">
@@ -92,7 +92,48 @@
 
         </div>
     </section>
+    <!-- Posts -->
+    <section id="posts">
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Latest Posts</h4>
+                        </div>
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Date</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Post One</td>
+                                    <td>Web Development</td>
+                                    <td>May 10 2018</td>
+                                    <td>
+                                        <a href="details.html" class="btn btn-seconday">
+                                            <i class="fas fa-angle-double-right"></i>
+                                            Details
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-3">
 
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -125,8 +166,8 @@
                         <div class="form-group">
                             <label for="image">Upload Image</label>
                             <div class="custom-file">
-                                <input type="file" id="image" class="custom-file-input">
                                 <label for="image" class="custom-file-label">Choose File</label>
+                                <input type="file" id="image" class="custom-file-input">
                                 <small class="form-text text-muted">Max Size 3mb</small>
                             </div>
                         </div>
@@ -214,7 +255,7 @@
         // Get the current year for the copyright
         $('#year').text(new Date().getFullYear());
         // CK Editor - What you see is what you get
-        CKEDITOR.replace('editor1');
+        bt
     </script>
 </body>
 

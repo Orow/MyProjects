@@ -125,7 +125,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>２</td>
+                                    <td>2</td>
                                     <td>Post Two</td>
                                     <td>Tech Gadgets</td>
                                     <td>Feb 11 2019</td>
@@ -188,8 +188,8 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-3 text-center">
-                    <div class="card text-white bg-primary mb-3">
+                <div class="col-3 text-center text-white">
+                    <div class="card bg-primary mb-3">
                         <div class="card-body">
                             <h3>Posts</h3>
                             <h4 class="display-4">
@@ -198,11 +198,38 @@
                             <a href="posts.html" class="btn btn-sm btn-outline-light">View</a>
                         </div>
                     </div>
+                    <div class="card bg-success mb-3">
+                        <div class="card-body">
+                            <h3>Categories</h3>
+                            <h4 class="display-4">
+                                <i class="fas fa-folder"></i> 4
+                            </h4>
+                            <a href="categories.html" class="btn btn-sm btn-outline-light">View</a>
+                        </div>
+                    </div>
+                    <div class="card bg-warning mb-3">
+                        <div class="card-body">
+                            <h3>Users</h3>
+                            <h4 class="display-4">
+                                <i class="fas fa-users"></i> 4
+                            </h4>
+                            <a href="users.html" class="btn btn-sm btn-outline-light">View</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
+    <!-- Footer -->
+    <footer id="main-footer" class="mt-5 py-5 bg-dark text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="lead">Copyright &copy; <span id="year"></span> Blogen</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <!-- Actions Modal -->
@@ -323,7 +350,7 @@
         // Get the current year for the copyright
         $('#year').text(new Date().getFullYear());
         // CK Editor - What you see is what you get
-        bt
+        CKEDITOR.replace('editor1');
     </script>
 </body>
 

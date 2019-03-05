@@ -92,7 +92,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Edit Post</h4>
+                            <h4>Edit Settings</h4>
                         </div>
                         <div class="card-body">
                             <form>
@@ -100,12 +100,25 @@
                                     <legend>Allow User Registration</legend>
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" value="Yes" checked> Yes
+                                            <input type="radio" class="form-check-input" name="yes-no" value="Yes" checked> Yes
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" value="No"> No
+                                            <input type="radio" class="form-check-input" name="yes-no" value="No"> No
+                                        </label>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <legend>Homepage Format</legend>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="a-b" value="posts" checked> Blog Page
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="a-b" value="page"> Homepage
                                         </label>
                                     </div>
                                 </fieldset>

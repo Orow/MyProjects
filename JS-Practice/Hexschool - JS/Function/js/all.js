@@ -37,8 +37,11 @@
 // Function 計算機案例
 document.getElementById("countId").onclick = function (){
     // alert('被點擊了')
-    var hamNum = document.getElementById("hamNumId").value;
-    var cokeNum = document.getElementById("cokeNumId").value;
-    alert(hamNum);
-    alert(cokeNum);
+    var hamPrice = 70;
+    var cokePrice = 30;
+    var hamNum = (parseInt(document.getElementById("hamNumId").value)) * hamPrice;
+    var cokeNum = (parseInt(document.getElementById("cokeNumId").value)) * cokePrice;
+    // parseInt => string convert to number
+    console.log(hamNum + cokeNum);
+    document.getElementById("totalId").textContent =hamNum + cokeNum;
 }

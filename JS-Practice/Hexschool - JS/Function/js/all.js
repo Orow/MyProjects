@@ -58,3 +58,5 @@ function getHamPrice(num){
 var wade = getHamPrice(15);
 var peter = getHamPrice(38);
 console.log(wade, peter);
+
+// -------------------------------------------

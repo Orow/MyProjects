@@ -34,7 +34,7 @@
 // ------------------------------------------
 
 
-// Function 計算機案例
+// --------Function 計算機案例----------
 document.getElementById("countId").onclick = function (){
     // alert('被點擊了')
     var hamPrice = 70;
@@ -45,3 +45,16 @@ document.getElementById("countId").onclick = function (){
     console.log(hamNum + cokeNum);
     document.getElementById("totalId").textContent =hamNum + cokeNum;
 }
+
+// -------------------------------------
+
+// ----------function + return 用法-----------
+function getHamPrice(num){
+    var hamPrice = 70;
+    var total = hamPrice * num;
+    return total;
+}
+
+var wade = getHamPrice(15);
+var peter = getHamPrice(38);
+console.log(wade, peter);

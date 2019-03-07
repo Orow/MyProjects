@@ -6,7 +6,7 @@
 // count(1,2);
 
 
-// -----全域變數/區域變數-----
+// -----全域變數(global)/區域變數(local)-----
 // 區域變數 - total
 
 function count(oneNum, TwoNum){

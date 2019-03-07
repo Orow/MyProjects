@@ -15,3 +15,5 @@ var myBill = 1580;
 var isVIP = false;
 var getFreebie = myBill > 1000 && isVIP == true;
 document.getElementById('andId').textContent = getFreebie;
+var getFreebie2 = myBill > 1000 || isVIP == true;
+document.getElementById('orId').textContent = getFreebie2;

@@ -30,13 +30,25 @@ var farms = [
 
 // ----for if i+= i-=----
 // 買了50隻雞後剩多少隻雞
+// var farmsTotal = farms.length;
+// for (var i = 0 ; i < farmsTotal ; i++){
+//     if (farms[i].chick >= 50){
+//         console.log(farms[i].farmer + '的農場養的雞有足夠數量可以賣');
+//         farms[i].chick -= 50;
+//         console.log(farms[i].farmer + '農場的雞剩下' + farms[i].chick);
+//         break;  
+//         // 第一家就買到就不買了, 加上break;會停止迴圈
+//     }
+// }
+
+
+// 每個農場個買200跟香蕉後,所有農場的香蕉剩多少根
 var farmsTotal = farms.length;
+var bananaTotal = 0;
 for (var i = 0 ; i < farmsTotal ; i++){
-    if (farms[i].chick >= 50){
-        console.log(farms[i].farmer + '的農場養的雞有足夠數量可以賣');
-        farms[i].chickl -= 50;
-        console.log(farms[i].farmer + '農場的雞剩下' + farms[i].chick);
-        break;  
-        // 第一家就買到就不買了, 加上break;會停止迴圈
+    if (farms[i].banana >= 200){
+        farms[i].banana -= 200;
+        bananaTotal += farms[i].banana;
     }
 }
+console.log('所有農場的香蕉剩下' + bananaTotal + '根');

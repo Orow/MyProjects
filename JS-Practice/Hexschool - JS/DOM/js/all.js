@@ -11,8 +11,12 @@
 
 // ----querySelectorAll----
 
-var elLen = document.querySelectorAll('.titleClass em')
+// var elLen = document.querySelectorAll('.titleClass em')
 
-for (var i = 0 ; i < elLen.length ; i++){
-    elLen[i].textContent = 'Chapter' + (i + 1);
-} 
+// for (var i = 0 ; i < elLen.length ; i++){
+//     elLen[i].textContent = 'Chapter' + (i + 1);
+// } 
+
+// ----setAttribute----
+var el = document.querySelector('.titleClass a');
+el.setAttribute('href','https://orow.github.io/MyProjects/');

@@ -35,3 +35,9 @@
 // ----innerHTML----
 var el = document.querySelector('.main').innerHTML = '<h1 class="header">Title for hexschool</h1>';
 console.log(el);
+
+
+var el2 = document.querySelector('ul');
+var link ='https://orow.github.io/MyProjects/';
+var owner = 'Orow';
+el2.innerHTML = '<li><a href="'+link+'">'+owner+'</a></li>';

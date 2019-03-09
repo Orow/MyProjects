@@ -42,30 +42,53 @@
 // var owner = 'Orow';
 // el2.innerHTML = '<li><a href="'+link+'">'+owner+'</a></li>';
 
+
+
+
 // ----innerHTML + for Loop----
-var farms = [{
-    farmer: '威廉',
-    field: 15,
-    chick: 120,
-    banana: 6000
-},
-{
-    farmer: '約翰',
-    field: 12,
-    chick: 50,
-    banana: 5000
-},
-{
-    farmer: '哈維',
-    field: 20,
-    chick: 200,
-    banana: 9000
+// var farms = [{
+//     farmer: '威廉',
+//     field: 15,
+//     chick: 120,
+//     banana: 6000
+// },
+// {
+//     farmer: '約翰',
+//     field: 12,
+//     chick: 50,
+//     banana: 5000
+// },
+// {
+//     farmer: '哈維',
+//     field: 20,
+//     chick: 200,
+//     banana: 9000
+// }
+// ]
+// var qs = document.querySelector("ul");
+// var str = "";
+// for (var i = 0 ; i < farms.length ; i++) {
+//     var content = "<li>" + farms[i].farmer +"</li>";
+//     str += content;
+// }
+// qs.innerHTML = str;
+
+
+
+// createElement
+var str = document.createElement('em');
+str.textContent = '1234';
+str.setAttribute('id', 'strId');
+
+var selectAll = document.querySelectorAll('.list');
+console.log(selectAll);
+
+var selectAllLen = selectAll.length;
+
+// 增加子節點,用appendChild會把原有的直接搬移,故需要cloneNode(true)
+
+for (var i = 0 ; i < selectAllLen ; i++){
+    var cloneElement = str.cloneNode(true);
+    selectAll[i].appendChild(cloneElement);
 }
-]
-var qs = document.querySelector("ul");
-var str = "";
-for (var i = 0 ; i < farms.length ; i++) {
-    var content = "<li>" + farms[i].farmer + "</li>";
-    str += content;
-}
-qs.innerHTML = str;
+

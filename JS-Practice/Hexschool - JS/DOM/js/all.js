@@ -17,6 +17,9 @@
 //     elLen[i].textContent = 'Chapter' + (i + 1);
 // } 
 
-// ----setAttribute----
+// ----se tAttribute----
 var el = document.querySelector('.titleClass a');
-el.setAttribute('href','https://orow.github.io/MyProjects/');
+el.setAttribute('href','https://orow.github.io/MyProjects/'); 
+
+var el2 = document.querySelector('titleClass a');
+el.setAttribute('id','strId');

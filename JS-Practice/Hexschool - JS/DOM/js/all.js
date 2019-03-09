@@ -33,11 +33,39 @@
 // console.log(el4.innerHTML);
 
 // ----innerHTML----
-var el = document.querySelector('.main').innerHTML = '<h1 class="header">Title for hexschool</h1>';
-console.log(el);
+// var el = document.querySelector('.main').innerHTML = '<h1 class="header">Title for hexschool</h1>';
+// console.log(el);
 
 
-var el2 = document.querySelector('ul');
-var link ='https://orow.github.io/MyProjects/';
-var owner = 'Orow';
-el2.innerHTML = '<li><a href="'+link+'">'+owner+'</a></li>';
+// var el2 = document.querySelector('ul');
+// var link ='https://orow.github.io/MyProjects/';
+// var owner = 'Orow';
+// el2.innerHTML = '<li><a href="'+link+'">'+owner+'</a></li>';
+
+// ----innerHTML + for Loop----
+var farms = [{
+    farmer: '威廉',
+    field: 15,
+    chick: 120,
+    banana: 6000
+},
+{
+    farmer: '約翰',
+    field: 12,
+    chick: 50,
+    banana: 5000
+},
+{
+    farmer: '哈維',
+    field: 20,
+    chick: 200,
+    banana: 9000
+}
+]
+var qs = document.querySelector("ul");
+var str = "";
+for (var i = 0 ; i < farms.length ; i++) {
+    var content = "<li>" + farms[i].farmer + "</li>";
+    str += content;
+}
+qs.innerHTML = str;

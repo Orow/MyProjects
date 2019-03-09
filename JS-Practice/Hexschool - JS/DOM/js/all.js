@@ -27,3 +27,4 @@ el.setAttribute('id','strId');
 // ----get Attribute---
 var el3 = document.querySelector('.titleClass a');
 console.log(el3.getAttribute('href'))
+console.log(el3.textContent);

@@ -17,17 +17,21 @@
 //     elLen[i].textContent = 'Chapter' + (i + 1);
 // } 
 
-// ----set tAttribute----
-var el = document.querySelector('.titleClass a');
-el.setAttribute('href','https://orow.github.io/MyProjects/'); 
+// ----set Attribute----
+// var el = document.querySelector('.titleClass a');
+// el.setAttribute('href','https://orow.github.io/MyProjects/'); 
 
-var el2 = document.querySelector('titleClass a');
-el.setAttribute('id','strId');
+// var el2 = document.querySelector('titleClass a');
+// el.setAttribute('id','strId');
 
 // ----get Attribute---
-var el3 = document.querySelector('.titleClass a');
-console.log(el3.getAttribute('href'))
-console.log(el3.textContent);
+// var el3 = document.querySelector('.titleClass a');
+// console.log(el3.getAttribute('href'))
+// console.log(el3.textContent);
 
-var el4 = document.querySelector('.titleClass');
-console.log(el4.innerHTML);
+// var el4 = document.querySelector('.titleClass');
+// console.log(el4.innerHTML);
+
+// ----innerHTML----
+var el = document.querySelector('.main').innerHTML = '<h1 class="header">Title for hexschool</h1>';
+console.log(el);

@@ -42,23 +42,59 @@
 
 
 // ----data-set 抓取資料----
-var dataSet = document.querySelector('.listli').dataset;
-console.log(dataSet);
+// var dataSet = document.querySelector('.listli').dataset;
+// console.log(dataSet);
 
-var dataSetDetail1 = document.querySelector('.listli').dataset.num;
-console.log(dataSetDetail1);
+// var dataSetDetail1 = document.querySelector('.listli').dataset.num;
+// console.log(dataSetDetail1);
 
-var dataSetDetail2 = document.querySelector('.listli').dataset.dog;
-console.log(dataSetDetail2);
+// var dataSetDetail2 = document.querySelector('.listli').dataset.dog;
+// console.log(dataSetDetail2);
 
-var listLi = document.querySelector('.listli');
-// 確認點擊的人名以及相關資訊
+// var listLi = document.querySelector('.listli');
+// // 確認點擊的人名以及相關資訊
 
-function checkList(e){
-    var num = e.target.dataset.num;
-    var dog = e.target.dataset.dog;
-    console.log('第' + num + '個人');
-    console.log('有'+ dog +'隻狗');
-}
+// function checkList(e){
+//     var num = e.target.dataset.num;
+//     var dog = e.target.dataset.dog;
+//     console.log('第' + num + '個人');
+//     console.log('有'+ dog +'隻狗');
+// }
 
-listLi.addEventListener('click',checkList,false);
+// listLi.addEventListener('click',checkList,false);
+
+
+
+
+
+// ----dataset, array 運用----
+var county = [
+    {
+      farmer:'卡斯伯'
+    }
+    ,{
+      farmer:'查理'
+    }
+  ]
+  var list = document.querySelector('.list');
+  
+  //更新農場資料
+  function updateList(){
+    var str = '';
+    var len = county.length;
+    for(var i = 0;len>i;i++){
+      str+='<li data-num="'+i+'">'+county[i].farmer+'</li>'
+    }
+    list.innerHTML = str;
+  }
+  updateList();
+  
+  //確認點擊的農夫是誰
+  function checkList(e){
+     var num = e.target.nodeName;
+     if (num !== "LI"){return}
+     var str = e.target.dataset.num;
+     alert('現在所選擇的農夫是'+ county[str].farmer);
+  }
+
+  list.addEventListener('click',checkList,false);

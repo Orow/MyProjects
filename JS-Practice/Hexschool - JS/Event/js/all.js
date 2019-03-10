@@ -33,16 +33,30 @@
 
 
 // ----Event Bubbling & Capturing----
+// var elbox = document.querySelector('.box');
+// elbox.addEventListener('click',function(){
+//     alert('hello box');
+//     console.log('box');
+// },false);
+
+// var elbody =document.querySelector('.body');
+// elbody.addEventListener('click',function(){
+//     alert('hello body');
+//     console.log('body');
+// },true);
+//false - 從指定元素往外找 - event bubbling
+//true - 從最外面往裡面找指定元素 - event capturing
+
+// ----Stop propagation - 停止傳遞----
 var elbox = document.querySelector('.box');
-elbox.addEventListener('click',function(){
+elbox.addEventListener('click',function(e){
+    e.stopPropagation();   
     alert('hello box');
     console.log('box');
 },false);
 
 var elbody =document.querySelector('.body');
-elbody.addEventListener('click',function(){
+elbody.addEventListener('click',function(e){
     alert('hello body');
     console.log('body');
 },true);
-//false - 從指定元素往外找 - event bubbling
-//true - 從最外面往裡面找指定元素 - event capturing

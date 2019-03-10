@@ -48,15 +48,25 @@
 //true - 從最外面往裡面找指定元素 - event capturing
 
 // ----Stop propagation - 停止傳遞----
-var elbox = document.querySelector('.box');
-elbox.addEventListener('click',function(e){
-    e.stopPropagation();   
-    alert('hello box');
-    console.log('box');
-},false);
+// var elbox = document.querySelector('.box');
+// elbox.addEventListener('click',function(e){
+//     e.stopPropagation();   
+//     alert('hello box');
+//     console.log('box');
+// },false);
 
-var elbody =document.querySelector('.body');
-elbody.addEventListener('click',function(e){
-    alert('hello body');
-    console.log('body');
-},true);
+// var elbody =document.querySelector('.body');
+// elbody.addEventListener('click',function(){
+//     alert('hello body');
+//     console.log('body');
+// },true);
+
+// ----preventDefault取消預設觸發行為----
+var el = document.querySelector('.link');
+el.addEventListener('click',function(e){
+    // 取消默認的行爲
+    // 這邊是取消點擊a連結後跳轉到指定頁面
+
+    // 可以用在submit按鈕,送出到後端前先在local端驗證有沒有資料
+    e.preventDefault();
+},false);

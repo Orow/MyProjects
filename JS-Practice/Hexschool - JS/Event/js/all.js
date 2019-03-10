@@ -62,11 +62,18 @@
 // },true);
 
 // ----preventDefault取消預設觸發行為----
-var el = document.querySelector('.link');
-el.addEventListener('click',function(e){
-    // 取消默認的行爲
-    // 這邊是取消點擊a連結後跳轉到指定頁面
+// var el = document.querySelector('.link');
+// el.addEventListener('click',function(e){
+//     // 取消默認的行爲
+//     // 這邊是取消點擊a連結後跳轉到指定頁面
 
-    // 可以用在submit按鈕,送出到後端前先在local端驗證有沒有資料
-    e.preventDefault();
+//     // 可以用在submit按鈕,送出到後端前先在local端驗證有沒有資料
+//     e.preventDefault();
+// },false);
+
+// ----e.target了解目前所在的元素位置----
+var el = document.querySelector('.header');
+el.addEventListener('click',function(e){
+    console.log(e.target);
+    // target中還有各種語法,如nodeName是大寫的節點名稱
 },false);

@@ -68,12 +68,49 @@
 
 
 // ----dataset, array 運用----
-var county = [
+// var county = [
+//     {
+//       farmer:'卡斯伯'
+//     }
+//     ,{
+//       farmer:'查理'
+//     }
+//   ]
+//   var list = document.querySelector('.list');
+  
+//   //更新農場資料
+//   function updateList(){
+//     var str = '';
+//     var len = county.length;
+//     for(var i = 0;len>i;i++){
+//       str+='<li data-num="'+i+'">'+county[i].farmer+'</li>'
+//     }
+//     list.innerHTML = str;
+//   }
+//   updateList();
+  
+//   //確認點擊的農夫是誰
+//   function checkList(e){
+//      var num = e.target.nodeName;
+//      if (num !== "LI"){return}
+//      var str = e.target.dataset.num;
+//      alert('現在所選擇的農夫是'+ county[str].farmer);
+//   }
+
+//   list.addEventListener('click',checkList,false);
+
+
+
+  // ----splice delete array----
+  var county = [
     {
       farmer:'卡斯伯'
     }
     ,{
       farmer:'查理'
+    }
+    ,{
+      farmer:'哈維'
     }
   ]
   var list = document.querySelector('.list');
@@ -91,10 +128,10 @@ var county = [
   
   //確認點擊的農夫是誰
   function checkList(e){
-     var num = e.target.nodeName;
-     if (num !== "LI"){return}
-     var str = e.target.dataset.num;
-     alert('現在所選擇的農夫是'+ county[str].farmer);
-  }
+     var num = e.target.dataset.num;
+     if (e.target.nodeName !== "LI"){return}
+     county.splice(num,1);
+     updateList();   
+    }
 
   list.addEventListener('click',checkList,false);

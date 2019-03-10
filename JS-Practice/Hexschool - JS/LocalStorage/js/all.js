@@ -83,7 +83,7 @@
 //     var str = '';
 //     var len = county.length;
 //     for(var i = 0;len>i;i++){
-//       str+='<li data-num="'+i+'">'+county[i].farmer+'</li>'
+//       str+='<li data-num='+i+'>'+county[i].farmer+'</li>'
 //     }
 //     list.innerHTML = str;
 //   }
@@ -116,7 +116,7 @@
 //   var str = '';
 //   var len = county.length;
 //   for (var i = 0; len > i; i++) {
-//     str += '<li data-num="' + i + '">' + county[i].farmer + '</li>'
+//     str += '<li data-num=' + i + '>' + county[i].farmer + '</li>'
 //   }
 //   list.innerHTML = str;
 // }
@@ -149,7 +149,7 @@ updateList(data);
 // 加入列表,並同步更新網頁與localStorage
 function saveItem(e) {
   e.preventDefault();
-  var str = document.querySelector('.textClass').value;
+  var str = document.querySeector('.textClass').value;
   var todo = {
     content : str
   };
@@ -164,7 +164,7 @@ function updateList(items){
   var len = items.length;
   for (var i = 0 ; i < len ; i ++){
     str += '<li><a href="#" data-index=' + i + '>刪除</a> <span>' + items[i].content + '</span></li>';
-  }
+  } 
   list.innerHTML = str;
 }
 

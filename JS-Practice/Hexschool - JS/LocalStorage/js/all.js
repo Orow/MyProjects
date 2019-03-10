@@ -77,7 +77,7 @@
 //     }
 //   ]
 //   var list = document.querySelector('.list');
-  
+
 //   //更新農場資料
 //   function updateList(){
 //     var str = '';
@@ -88,7 +88,7 @@
 //     list.innerHTML = str;
 //   }
 //   updateList();
-  
+
 //   //確認點擊的農夫是誰
 //   function checkList(e){
 //      var num = e.target.nodeName;
@@ -101,37 +101,80 @@
 
 
 
-  // ----splice delete array----
-  var county = [
-    {
-      farmer:'卡斯伯'
-    }
-    ,{
-      farmer:'查理'
-    }
-    ,{
-      farmer:'哈維'
-    }
-  ]
-  var list = document.querySelector('.list');
-  
-  //更新農場資料
-  function updateList(){
-    var str = '';
-    var len = county.length;
-    for(var i = 0;len>i;i++){
-      str+='<li data-num="'+i+'">'+county[i].farmer+'</li>'
-    }
-    list.innerHTML = str;
-  }
-  updateList();
-  
-  //確認點擊的農夫是誰
-  function checkList(e){
-     var num = e.target.dataset.num;
-     if (e.target.nodeName !== "LI"){return}
-     county.splice(num,1);
-     updateList();   
-    }
+// ----splice delete array----
+// var county = [{
+//   farmer: '卡斯伯'
+// }, {
+//   farmer: '查理'
+// }, {
+//   farmer: '哈維'
+// }]
+// var list = document.querySelector('.list');
 
-  list.addEventListener('click',checkList,false);
+// //更新農場資料
+// function updateList() {
+//   var str = '';
+//   var len = county.length;
+//   for (var i = 0; len > i; i++) {
+//     str += '<li data-num="' + i + '">' + county[i].farmer + '</li>'
+//   }
+//   list.innerHTML = str;
+// }
+// updateList();
+
+// //確認點擊的農夫是誰
+// function checkList(e) {
+//   var num = e.target.dataset.num;
+//   if (e.target.nodeName !== "LI") {
+//     return
+//   }
+//   county.splice(num, 1);
+//   updateList();
+// }
+
+// list.addEventListener('click', checkList, false);
+
+
+// ----localStorage - side project----
+// 指定dom
+var list = document.querySelector('.list');
+var addList = document.querySelector('.addList');
+var data = JSON.parse(localStorage.getItem('toDoList')) || [];
+
+// 監聽與更新
+addList.addEventListener('click', saveItem);
+list.addEventListener('click', deleteItem);
+updateList(data);
+
+// 加入列表,並同步更新網頁與localStorage
+function saveItem(e) {
+  e.preventDefault();
+  var str = document.querySelector('.textClass').value;
+  var todo = {
+    content : str
+  };
+  data.push(todo);
+  updateList(data);
+  localStorage.setItem('toDoList', JSON.stringify(data));
+}
+
+// 更新網頁內容
+function updateList(items){
+  str="";
+  var len = items.length;
+  for (var i = 0 ; i < len ; i ++){
+    str += '<li><a href="#" data-index=' + i + '>刪除</a> <span>' + items[i].content + '</span></li>';
+  }
+  list.innerHTML = str;
+}
+
+// 刪除待辦事項
+function deleteItem(e){
+  e.preventDefault();
+  if (e.target.nodeName !== 'A'){return};
+  var index = e.target.dataset.index;
+  data.splice(index, 1);
+  localStorage.setItem('toDoList', JSON.stringify(data));
+  updateList(data);
+}
+

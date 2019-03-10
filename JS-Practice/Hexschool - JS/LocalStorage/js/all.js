@@ -17,3 +17,20 @@ function callName(e){
     alert(str);
 }
 call.addEventListener('click',callName);
+
+
+// ---- array to string / string to array ----
+// 因為localstorage只會保存string資料
+var county = [
+    {farmer : '哈維'}
+];
+
+var countyString = JSON.stringify(county)
+console.log(countyString);
+localStorage.setItem('countyItem',countyString);
+
+var getData = localStorage.getItem('countyItem');
+console.log(getData);
+
+var getDataArray = JSON.parse(getData);
+console.log(getDataArray[0].farmer);

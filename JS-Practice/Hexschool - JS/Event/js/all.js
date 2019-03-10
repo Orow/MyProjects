@@ -72,8 +72,46 @@
 // },false);
 
 // ----e.target了解目前所在的元素位置----
-var el = document.querySelector('.header');
-el.addEventListener('click',function(e){
-    console.log(e.target);
-    // target中還有各種語法,如nodeName是大寫的節點名稱
-},false);
+// var el = document.querySelector('.header');
+// el.addEventListener('click',function(e){
+//     console.log(e.target);
+//     // target中還有各種語法,如nodeName是大寫的節點名稱
+// },false);
+
+// ----change - 表單內容更動時觸發----
+var area = document.getElementById('areaId');
+var list = document.querySelector('.list');
+var county =[
+    {
+        farmer:'哈維',
+        place:'松山區'
+    },
+    {
+        farmer:'傑森',
+        place:'中山區'
+    },
+    {
+        farmer:'戴爾',
+        place:'松山區'
+    },
+    {
+        farmer:'威廉',
+        place:'信義區'
+    },
+    {
+        farmer:'喬治',
+        place:'中山區'
+    },
+]
+var countyLen = county.length;
+function updateList(e){
+    var select = e.target.value;
+    var str = "";
+    for (var i = 0 ; i < countyLen ; i++){
+        if (select == county[i].place){
+            str += '<li>'+county[i].farmer+'</li>'
+        }
+    }
+    list.innerHTML = str;
+}
+area.addEventListener('change',updateList,false);

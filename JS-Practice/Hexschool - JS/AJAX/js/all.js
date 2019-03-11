@@ -47,3 +47,14 @@ xhr.onload = function (){
     }
 }
 
+// 1. 建立XMLHttpRequest
+// 2. 傳送到對方伺服器並要資料
+// 3. 回傳到自己的瀏覽器
+// 4. 拿到資料後再看要怎麼處理
+
+
+// ----HTTP狀態碼----
+// chrome -> insepect -> network
+// status = 200 資料有正確回傳,有撈到
+// status = 404 資料讀取錯誤,沒有撈到
+

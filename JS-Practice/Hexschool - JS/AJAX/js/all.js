@@ -16,13 +16,34 @@
 
 
 // ----AJAX非同步的概念----
+// var xhr =new XMLHttpRequest();
+
+// xhr.open('get','https://data.kcg.gov.tw/dataset/a98754a3-3446-4c9a-abfc-58dc49f2158c/resource/48d4dfc4-a4b2-44a5-bdec-70f9558cd25d/download/yopendata1070622opendatajson-1070622.json',true);
+
+// // true - 非同步,不會等資料傳回來就讓程式繼續往下跑,等到資料跑完才自動回傳
+// // false - 同步,會等資料跑完回傳回來,程式再繼續往下跑
+
+// xhr.send(null);
+
+// console.log(xhr.responseText);
+
+
+
+// ----AJAX非同步的概念,非同步也可以處裡,取值後處理----
 var xhr =new XMLHttpRequest();
 
 xhr.open('get','https://data.kcg.gov.tw/dataset/a98754a3-3446-4c9a-abfc-58dc49f2158c/resource/48d4dfc4-a4b2-44a5-bdec-70f9558cd25d/download/yopendata1070622opendatajson-1070622.json',true);
 
-// true - 非同步,不會等資料傳回來就讓程式繼續往下跑,等到資料跑完才自動回傳
-// false - 同步,會等資料跑完回傳回來,程式再繼續往下跑
-
 xhr.send(null);
 
-console.log(xhr.responseText);
+xhr.onload = function (){
+    console.log(xhr.responseText);
+    var str = JSON.parse(xhr.responseText);
+    for (var i = 0 ; i < str.length; i++){
+        var kind = str[i].Kind;
+        if ( kind == "公共充電站"){
+            document.querySelector('.list').innerHTML += '<li>'+ str[i].Location + '</li>';
+        }
+    }
+}
+

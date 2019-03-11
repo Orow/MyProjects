@@ -59,12 +59,25 @@
 // status = 404 資料讀取錯誤,沒有撈到
 
 //  ----Post寫法----
+// var xhr = new XMLHttpRequest();
+
+// // post(傳送資料到後端伺服器)
+// // Hexschool AJAX practice: https://github.com/hexschool/nodejs_ajax_tutorial
+// xhr.open('post','https://hexschool-tutorial.herokuapp.com/api/signup',true);
+
+// // request type to backend-sever
+// xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+// xhr.send('email=abcde1111@gmail.com&password=12345');
+
+// post寫法,資料用json格式
+var account ={
+    email: 'qweasdqq@gamil.com',
+    password: '555'
+}
 var xhr = new XMLHttpRequest();
-
-// post(傳送資料到伺服器)
-// Hexschool AJAX practice: https://github.com/hexschool/nodejs_ajax_tutorial
 xhr.open('post','https://hexschool-tutorial.herokuapp.com/api/signup',true);
+xhr.setRequestHeader('Content-type','application/json');
 
-// request type to sever
-xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-xhr.send('email=abcde1111@gmail.com&password=12345');
+// send()中需要用字串傳進去
+var data = JSON.stringify(account);
+xhr.send(data);

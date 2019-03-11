@@ -30,22 +30,22 @@
 
 
 // ----AJAX非同步的概念,非同步也可以處裡,取值後處理----
-var xhr =new XMLHttpRequest();
+// var xhr =new XMLHttpRequest();
 
-xhr.open('get','https://data.kcg.gov.tw/dataset/a98754a3-3446-4c9a-abfc-58dc49f2158c/resource/48d4dfc4-a4b2-44a5-bdec-70f9558cd25d/download/yopendata1070622opendatajson-1070622.json',true);
+// xhr.open('get','https://data.kcg.gov.tw/dataset/a98754a3-3446-4c9a-abfc-58dc49f2158c/resource/48d4dfc4-a4b2-44a5-bdec-70f9558cd25d/download/yopendata1070622opendatajson-1070622.json',true);
 
-xhr.send(null);
+// xhr.send(null);
 
-xhr.onload = function (){
-    console.log(xhr.responseText);
-    var str = JSON.parse(xhr.responseText);
-    for (var i = 0 ; i < str.length; i++){
-        var kind = str[i].Kind;
-        if ( kind == "公共充電站"){
-            document.querySelector('.list').innerHTML += '<li>'+ str[i].Location + '</li>';
-        }
-    }
-}
+// xhr.onload = function (){
+//     console.log(xhr.responseText);
+//     var str = JSON.parse(xhr.responseText);
+//     for (var i = 0 ; i < str.length; i++){
+//         var kind = str[i].Kind;
+//         if ( kind == "公共充電站"){
+//             document.querySelector('.list').innerHTML += '<li>'+ str[i].Location + '</li>';
+//         }
+//     }
+// }
 
 // 1. 建立XMLHttpRequest
 // 2. 傳送到對方伺服器並要資料
@@ -58,3 +58,13 @@ xhr.onload = function (){
 // status = 200 資料有正確回傳,有撈到
 // status = 404 資料讀取錯誤,沒有撈到
 
+//  ----Post寫法----
+var xhr = new XMLHttpRequest();
+
+// post(傳送資料到伺服器)
+// Hexschool AJAX practice: https://github.com/hexschool/nodejs_ajax_tutorial
+xhr.open('post','https://hexschool-tutorial.herokuapp.com/api/signup',true);
+
+// request type to sever
+xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xhr.send('email=abcde1111@gmail.com&password=12345');

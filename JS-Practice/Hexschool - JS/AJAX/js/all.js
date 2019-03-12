@@ -70,14 +70,74 @@
 // xhr.send('email=abcde1111@gmail.com&password=12345');
 
 // post寫法,資料用json格式
-var account ={
-    email: 'qweasdqq@gamil.com',
-    password: '555'
-}
-var xhr = new XMLHttpRequest();
-xhr.open('post','https://hexschool-tutorial.herokuapp.com/api/signup',true);
-xhr.setRequestHeader('Content-type','application/json');
+// var account ={
+//     email: 'qweasdqq@gamil.com',
+//     password: '555'
+// }
+// var xhr = new XMLHttpRequest();
+// xhr.open('post','https://hexschool-tutorial.herokuapp.com/api/signup',true);
+// xhr.setRequestHeader('Content-type','application/json');
 
-// send()中需要用字串傳進去
-var data = JSON.stringify(account);
-xhr.send(data);
+// // send()中需要用字串傳進去
+// var data = JSON.stringify(account);
+// xhr.send(data);
+
+// ----AJAX sample registration----
+var send = document.querySelector('.send');
+send.addEventListener('click', signup, false);
+
+function signup() {
+    var emailStr = document.querySelector('.account').value;
+    var passwordStr = document.querySelector('.password').value;
+    var account = {};
+    account.email = emailStr;
+    account.password = passwordStr;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('post', 'https://hexschool-tutorial.herokuapp.com/api/signup', true)
+    xhr.setRequestHeader('Content-type', 'application/json')
+    var data = JSON.stringify(account);
+    xhr.send(data);
+    // 因為var xhr寫在function中是區域變數,所以function執行完後,單獨執行xhr會變成not defined  
+    xhr.onload = function () {
+        var callBackData = JSON.parse(xhr.responseText);
+        console.log(callBackData);
+        var verifyStr = callBackData.message;
+        if (verifyStr == '帳號註冊成功') {
+            alert('帳號註冊成功!!');
+        } else if (verifyStr == '此帳號已被使用') {
+            alert('此帳號已被使用!!\n請更換帳號名稱並重新註冊');
+        } else {
+            alert('帳號註冊失敗!!');
+        }
+    }
+}
+
+// ----AJAX sample login----
+var signIn = document.querySelector('.signIn');
+signIn.addEventListener('click', signin, false);
+
+function signin() {
+    var emailStr = document.querySelector('.accountLogin').value;
+    var passwordStr = document.querySelector('.passwordLogin').value;
+    var account = {};
+    account.email = emailStr;
+    account.password = passwordStr;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('post', 'https://hexschool-tutorial.herokuapp.com/api/signin', true)
+    xhr.setRequestHeader('Content-type', 'application/json')
+    var data = JSON.stringify(account);
+    xhr.send(data);
+    // 因為var xhr寫在function中是區域變數,所以function執行完後,單獨執行xhr會變成not defined  
+    xhr.onload = function () {
+        var callBackData = JSON.parse(xhr.responseText);
+        console.log(callBackData);
+        var verifyStr = callBackData.message;
+        if (verifyStr == '登入成功') {
+            alert('帳號登入成功!!');
+        } else {
+            alert('此帳號不存或帳號密碼錯誤!!');
+        }
+    }
+}

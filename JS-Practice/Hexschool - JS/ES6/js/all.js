@@ -40,9 +40,27 @@
 // }
 
 // 改用let即可
-const listLen = document.querySelectorAll('.list li').length;
-for (let i = 0; i < listLen; i++) {
-    document.querySelectorAll('.list li')[i].addEventListener('click', function () {
-        alert(i + 1);
-    })
-}
+// const listLen = document.querySelectorAll('.list li').length;
+// for (let i = 0; i < listLen; i++) {
+//     document.querySelectorAll('.list li')[i].addEventListener('click', function () {
+//         alert(i + 1);
+//     })
+// }
+
+// ----const 唯獨變數----
+// 不能被修改, ex. url網址
+// object, array還是可以, 下面範例obj = {'x'}
+const obj ={
+    url:'http://www.x.com'
+};
+obj.url = 'x'
+console.log(obj);
+
+// 如果想要object, array都不能被修改
+const obj ={
+    url:'http://www.x.com'
+};
+// 用freeze來凍結
+Object.freeze(obj);
+obj.url = 'x'
+console.log(obj);

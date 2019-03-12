@@ -1,3 +1,4 @@
+// ----------ES6----------
 // ----let - if,function的用法----
 // let, const 用來宣告區塊裡的變數
 // 區塊 = {}
@@ -67,25 +68,35 @@
 
 
 // ----let, const注意事項與使用時機----
-// 特性一 - var會移動到最上面執行
-// 1st a = undefined(不是找不到), 2nd a = 3
-console.log(a);
-var a = 3;
-console.log(a);
+// // 特性一 - var會移動到最上面執行
+// // 1st a = undefined(不是找不到), 2nd a = 3
+// console.log(a);
+// var a = 3;
+// console.log(a);
 
-// // 改用let(const一樣)
-// // 1st a = 找不到, 2nd a = 3
-console.log(a);
-let a = 3;
-console.log(a);
+// // // 改用let(const一樣)
+// // // 1st a = 找不到, 2nd a = 3
+// console.log(a);
+// let a = 3;
+// console.log(a);
 
-// 特性二 - 同區塊上不能二次命名
-var a = 1;
-var a = 2;
+// // 特性二 - 同區塊上不能二次命名
+// var a = 1;
+// var a = 2;
 
-// let, const 這樣寫會顯示b已經被宣告 
-let b = 5;
-let b = 6;
+// // let, const 這樣寫會顯示b已經被宣告 
+// let b = 5;
+// let b = 6;
 
-// 特性三 - b = 5 也不會進入到window裡面
+// // 特性三 - b = 5 也不會進入到window裡面
+
+
+// ----ES6 - 字串----
+const list =document.querySelector('.list');
+const photoUrl =  'https://source.unsplash.com/random/800x600';
+// 原本做法如下
+// list.innerHTML = '<li><img src=' + photoUrl + '></li>'
+// ES6
+// 最外面用``包起來,裡面""中需要用${}來包住
+list.innerHTML = `<li><img src="${photoUrl}"></li>`
 

@@ -50,17 +50,42 @@
 // ----const 唯獨變數----
 // 不能被修改, ex. url網址
 // object, array還是可以, 下面範例obj = {'x'}
-const obj ={
-    url:'http://www.x.com'
-};
-obj.url = 'x'
-console.log(obj);
+// const obj ={
+//     url:'http://www.x.com'
+// };
+// obj.url = 'x'
+// console.log(obj);
 
 // 如果想要object, array都不能被修改
-const obj ={
-    url:'http://www.x.com'
-};
-// 用freeze來凍結
-Object.freeze(obj);
-obj.url = 'x'
-console.log(obj);
+// const obj ={
+//     url:'http://www.x.com'
+// };
+// // 用freeze來凍結
+// Object.freeze(obj);
+// obj.url = 'x'
+// console.log(obj);
+
+
+// ----let, const注意事項與使用時機----
+// 特性一 - var會移動到最上面執行
+// 1st a = undefined(不是找不到), 2nd a = 3
+console.log(a);
+var a = 3;
+console.log(a);
+
+// // 改用let(const一樣)
+// // 1st a = 找不到, 2nd a = 3
+console.log(a);
+let a = 3;
+console.log(a);
+
+// 特性二 - 同區塊上不能二次命名
+var a = 1;
+var a = 2;
+
+// let, const 這樣寫會顯示b已經被宣告 
+let b = 5;
+let b = 6;
+
+// 特性三 - b = 5 也不會進入到window裡面
+

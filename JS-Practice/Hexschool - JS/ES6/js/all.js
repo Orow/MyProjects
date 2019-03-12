@@ -95,8 +95,12 @@
 const list =document.querySelector('.list');
 const photoUrl =  'https://source.unsplash.com/random/800x600';
 // 原本做法如下
-// list.innerHTML = '<li><img src=' + photoUrl + '></li>'
+list.innerHTML = '<li><img src=' + photoUrl + '></li>'
 // ES6
 // 最外面用``包起來,裡面""中需要用${}來包住
 list.innerHTML = `<li><img src="${photoUrl}"></li>`
 
+
+// ----ES6 - 編輯器與小技巧----
+// emmet
+innerHTML = `li>h2+img`

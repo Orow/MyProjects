@@ -75,18 +75,18 @@
 
 
 
-// createElement
+// ----createElement-----
 // var str = document.createElement('em');
 // str.textContent = '1234';
 // str.setAttribute('id', 'strId');
 
-// 每個li裡面要新增em的元素
+// // 每個li裡面要新增em的元素
 // var selectAll = document.querySelectorAll('.list');
 // console.log(selectAll);
 
 // var selectAllLen = selectAll.length;
 
-// 增加子節點,用appendChild會把原有的直接搬移,故需要cloneNode(true)
+// // 增加子節點,用appendChild會把原有的直接搬移,故需要cloneNode(true)
 
 // for (var i = 0 ; i < selectAllLen ; i++){
 //     var cloneElement = str.cloneNode(true);
@@ -94,7 +94,7 @@
 // }
 
 
-// createElement + for 每個農場農夫的名字
+// ----createElement + for 每個農場農夫的名字----
 var farms = [{
         farmer: '威廉',
         field: 15,

@@ -149,7 +149,7 @@ updateList(data);
 // 加入列表,並同步更新網頁與localStorage
 function saveItem(e) {
   e.preventDefault();
-  var str = document.querySeector('.textClass').value;
+  var str = document.querySelector('.textClass').value;
   var todo = {
     content : str
   };

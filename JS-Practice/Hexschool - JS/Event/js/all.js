@@ -13,7 +13,7 @@
 // },false)
 
 // ----onclick & addEventListener事件綁定的差異----
-// onclick只會顯示最後一個的事件
+// // onclick只會顯示最後一個的事件
 // var elOn = document.querySelector('.btnOn');
 // elOn.onclick = function(){
 //     alert('onclick-1');
@@ -22,7 +22,7 @@
 //     alert('onclick-2');
 // }
 
-// addEventListener會兩個事件都觸發到
+// // addEventListener會兩個事件都觸發到
 // var elAdd = document.querySelector('.btnAdd');
 // elAdd.addEventListener('click',function(){
 //     alert('add-1');
@@ -48,18 +48,18 @@
 //true - 從最外面往裡面找指定元素 - event capturing
 
 // ----Stop propagation - 停止傳遞----
-// var elbox = document.querySelector('.box');
-// elbox.addEventListener('click',function(e){
-//     e.stopPropagation();   
-//     alert('hello box');
-//     console.log('box');
-// },false);
+var elbox = document.querySelector('.box');
+elbox.addEventListener('click',function(e){
+    e.stopPropagation();  
+    alert('hello box');
+    console.log('box');
+},false);
 
-// var elbody =document.querySelector('.body');
-// elbody.addEventListener('click',function(){
-//     alert('hello body');
-//     console.log('body');
-// },true);
+var elbody =document.querySelector('.body');
+elbody.addEventListener('click',function(e){
+    alert('hello body');
+    console.log('body');
+},false);
 
 // ----preventDefault取消預設觸發行為----
 // var el = document.querySelector('.link');
@@ -79,39 +79,39 @@
 // },false);
 
 // ----change - 表單內容更動時觸發----
-var area = document.getElementById('areaId');
-var list = document.querySelector('.list');
-var county =[
-    {
-        farmer:'哈維',
-        place:'松山區'
-    },
-    {
-        farmer:'傑森',
-        place:'中山區'
-    },
-    {
-        farmer:'戴爾',
-        place:'松山區'
-    },
-    {
-        farmer:'威廉',
-        place:'信義區'
-    },
-    {
-        farmer:'喬治',
-        place:'中山區'
-    },
-]
-var countyLen = county.length;
-function updateList(e){
-    var select = e.target.value;
-    var str = "";
-    for (var i = 0 ; i < countyLen ; i++){
-        if (select == county[i].place){
-            str += '<li>'+county[i].farmer+'</li>'
-        }
-    }
-    list.innerHTML = str;
-}
-area.addEventListener('change',updateList,false);
+// var area = document.getElementById('areaId');
+// var list = document.querySelector('.list');
+// var county =[
+//     {
+//         farmer:'哈維',
+//         place:'松山區'
+//     },
+//     {
+//         farmer:'傑森',
+//         place:'中山區'
+//     },
+//     {
+//         farmer:'戴爾',
+//         place:'松山區'
+//     },
+//     {
+//         farmer:'威廉',
+//         place:'信義區'
+//     },
+//     {
+//         farmer:'喬治',
+//         place:'中山區'
+//     },
+// ]
+// var countyLen = county.length;
+// function updateList(e){
+//     var select = e.target.value;
+//     var str = "";
+//     for (var i = 0 ; i < countyLen ; i++){
+//         if (select == county[i].place){
+//             str += '<li>'+county[i].farmer+'</li>'
+//         }
+//     }
+//     list.innerHTML = str;
+// }
+// area.addEventListener('change',updateList,false);

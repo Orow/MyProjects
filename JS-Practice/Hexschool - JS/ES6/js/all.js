@@ -26,13 +26,13 @@
 
 
 // ----let - for 用法----
-// 不會污染到全域變數(global)
+// // 不會污染到全域變數(global)
 // for (let i = 0 ; i < 3 ; i++){
 //     console.log(i);
 // }
 
-// 點擊list就alert的list編號
-// 污染到i,結果i都是=3
+// // 點擊list就alert的list編號
+// // 污染到i,結果i都是=3
 // const listLen = document.querySelectorAll('.list li').length;
 // for (var i = 0 ; i < listLen ; i++){
 //     document.querySelectorAll('.list li')[i].addEventListener('click',function(){
@@ -40,7 +40,7 @@
 //     }) 
 // }
 
-// 改用let即可
+// // 改用let即可
 // const listLen = document.querySelectorAll('.list li').length;
 // for (let i = 0; i < listLen; i++) {
 //     document.querySelectorAll('.list li')[i].addEventListener('click', function () {
@@ -50,14 +50,13 @@
 
 // ----const 唯獨變數----
 // 不能被修改, ex. url網址
-// object, array還是可以, 下面範例obj = {'x'}
-// const obj ={
-//     url:'http://www.x.com'
-// };
-// obj.url = 'x'
-// console.log(obj);
-
-// 如果想要object, array都不能被修改
+// // object, array還是可以, 下面範例obj = {'x'}
+// // const obj ={
+// //     url:'http://www.x.com'
+// // };
+// // obj.url = 'x'
+// // console.log(obj);
+// // array都不能被修改
 // const obj ={
 //     url:'http://www.x.com'
 // };
@@ -65,6 +64,7 @@
 // Object.freeze(obj);
 // obj.url = 'x'
 // console.log(obj);
+// // // 如果想要object, 
 
 
 // ----let, const注意事項與使用時機----

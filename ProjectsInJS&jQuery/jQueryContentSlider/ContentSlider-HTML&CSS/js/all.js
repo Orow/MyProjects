@@ -13,4 +13,13 @@ $(document).ready(function(){
     // Show first slide
     $('.active').show();
 
+    $('#next').on('click', function(){
+        $('.active').removeClass('.active').addClass('.oldActive');
+        if($('.oldActive').is(':last-child')){
+            $('.slide').first().addClass('active');
+        }  else {
+            $('.oldActive').next().addClass('.active');
+        }
+        
+    })
 });

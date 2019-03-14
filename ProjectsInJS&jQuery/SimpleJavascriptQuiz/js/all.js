@@ -1,6 +1,6 @@
 function submitAnswers() {
     var total = 5;
-    var scroe = 0;
+    var score = 0;
 
     // Get User Input
     var q1 = document.forms["quizForm"]["q1"].value;
@@ -12,10 +12,25 @@ function submitAnswers() {
     // Validation
     for (var i = 1; i <= total; i++) {
         // qi, q固定i是迴圈=>eval('q'+ i )
-        if (eval('q'+i) == null || eval('q'+i) == "") {
+        if (eval('q' + i) == null || eval('q' + i) == "") {
             alert('You missed question ' + i);
             return false;
         }
     }
+
+    // Set Correct Answers
+    var answers = ["b", "a", "d", "b", "d"];
+
+    // Check Answers
+    for (var i = 1; i <= total; i++) {
+        if (eval('q'+i) == answers[i-1]) {
+            score++;
+        }
+    }
+    // Display Results
+    var results = document.getElementById('results');
+    results.innerHTML = '<h3>You scored <span>' +score+ '</span> out of <span>' +total+'</span></h3>';
+    alert('You scroed ' +score+ ' out of' +total);
+    return false;
 
 }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQueryContentSlider</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/all.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.myLink').on('mouseenter',function(){
+                $('h1').addClass('red'); 
+                // $('h1').fadeOut(2000);
+                // $('h1').fadeToggle(2000);
+                // $('h1').slideToggle(500); 
+                // $('h1').slideUp(500);
+                // $('h1').slideDown(500);
+            });
+            $('.myLink').on('mouseleave',function(){
+                $('h1').removeClass('red'); 
+                // $('h1').slideDown(500);
+            });
+            $('.myLink').on('click',function(){
+                // $('h1').text('Hello World'); 
+                // $('h1').html('<h3>Hello World</h3>'); 
+                // html => h1下面再加上h3
+                // $('h1').replaceWith('<h3>Hello World</h3>'); 
+                // replaceWith => 直接把h1取代為h3
+                $('h1').append('<h3>Hello World</h3>');
+                // $('h1').css("font-size","40px");
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <h1>Welcome Everyone</h1>
+    <a href="#" class="myLink">Click meme</a>
+
+
+
+
+
+</body>
+
+</html>

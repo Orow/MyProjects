@@ -13,29 +13,30 @@
     <script src="js/all.js"></script>
 
 </head>
+
 <body>
     <div id="container">
         <header>
             <h1>Search<span>Vidz</span></h1>
             <p>Search all Youtube videos</p>
         </header>
-    </div>
-    <section>
-        <form id="search-form" name="search-form" onsubmit="return search()">
-            <div class="fieldcontainer">
-                <input type="search" id="query" class="search-field" placeholder="Search Youtube...">
-                <input type="submit" name="search-btn" id="search-btn" value="">
-            </div>
-        </form>
-        <!-- Videos list -->
-        <ul id="results"></ul>
-        <!-- Prev & Next buttons -->
-        <div id="buttons"></div>
-    </section>
-    <footer>
-        <p>Copyright &copy; <span id="year"></span>, All Rights Reserved </p>
-    </footer>
 
+        <section>
+            <form id="search-form" name="search-form" onsubmit="return search()">
+                <div class="fieldcontainer">
+                    <input type="search" id="query" class="search-field" placeholder="Search Youtube...">
+                    <input type="submit" name="search-btn" id="search-btn" value="">
+                </div>
+            </form>
+            <!-- Videos list -->
+            <ul id="results"></ul>
+            <!-- Prev & Next buttons -->
+            <div id="buttons"></div>
+        </section>
+        <footer>
+            <p>Copyright &copy; <span id="year"></span>, All Rights Reserved </p>
+        </footer>
+    </div>
     <script>
         $('#year').text(new Date().getFullYear());
     </script>

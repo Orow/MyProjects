@@ -26,4 +26,42 @@ $(function(){
             },400, function(){});
         }
     });
+    $('#search-form').submit(function(e){
+        e.preventDefault();
+    });
 })
+
+// Search Function
+function search(){
+    // clear results
+    $('.results').html();
+    $('.buttons').html();
+
+    // Get Form Input
+    q = $('#query').val();
+
+    // Run Get Rquest on API
+    $.get(
+        "https://www.googleapis.com/youtube/v3/search",{
+            part:'snippet, id',
+            q: q,
+            type: 'video',
+            key: 'AIzaSyC07XWOrx8BPV7BBcXO_-YfrUvnm7LiqfA'
+        }, function (data){
+            var nexyPageToken = data.nextPageToken;
+            var prevPageToken = data.prevPageToken;
+            // Log data
+            console.log(data);
+
+            $.each(data.items, function(i, item){
+                // Get Output
+                var output = getOutput(item);
+
+                // Display results
+                $('#results').append(output);
+            });
+
+            }
+
+    );
+}

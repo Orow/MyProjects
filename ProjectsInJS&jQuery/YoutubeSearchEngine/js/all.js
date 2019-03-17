@@ -88,6 +88,127 @@ function search() {
     );
 }
 
+// NextPage function
+function nextPage() {
+    var token = $('#next-button').data('token');
+    var q = $('#next-button').data('query');
+    
+    // clear results
+    $('#results').html('');
+    $('#buttons').html('');
+
+    // Get Form Input
+    q = $('#query').val();
+
+    // Run Get Rquest on API
+    $.get(
+        "https://www.googleapis.com/youtube/v3/search", {
+            part: 'snippet, id',
+            q: q,
+            pageToken: token,
+            type: 'video',
+            key: 'AIzaSyC07XWOrx8BPV7BBcXO_-YfrUvnm7LiqfA'
+        },
+        function (data) {
+            var nextPageToken = data.nextPageToken;
+            var prevPageToken = data.prevPageToken;
+            // Log data
+            console.log(data);
+            // data sample
+            // {
+            //     "kind": "youtube#searchListResponse",
+            //     "etag": etag,
+            //     "nextPageToken": string,
+            //     "prevPageToken": string,
+            //     "regionCode": string,
+            //     "pageInfo": {
+            //       "totalResults": integer,
+            //       "resultsPerPage": integer
+            //     },
+            //     "items": [
+            //       search Resource
+            //     ]
+            //  }
+
+            $.each(data.items, function (i, item) {
+                // Get Output
+                var output = getOutput(item);
+
+                // Display results
+                $('#results').append(output);
+            });
+
+            // Button
+            var buttons = getButtons(prevPageToken, nextPageToken);
+            // Display Buttons
+            $('#buttons').append(buttons);
+
+
+        }
+
+    );
+}
+// PrevPage function
+function prevPage() {
+    var token = $('#prev-button').data('token');
+    var q = $('#prev-button').data('query');
+    
+    // clear results
+    $('#results').html('');
+    $('#buttons').html('');
+
+    // Get Form Input
+    q = $('#query').val();
+
+    // Run Get Rquest on API
+    $.get(
+        "https://www.googleapis.com/youtube/v3/search", {
+            part: 'snippet, id',
+            q: q,
+            pageToken: token,
+            type: 'video',
+            key: 'AIzaSyC07XWOrx8BPV7BBcXO_-YfrUvnm7LiqfA'
+        },
+        function (data) {
+            var nextPageToken = data.nextPageToken;
+            var prevPageToken = data.prevPageToken;
+            // Log data
+            console.log(data);
+            // data sample
+            // {
+            //     "kind": "youtube#searchListResponse",
+            //     "etag": etag,
+            //     "nextPageToken": string,
+            //     "prevPageToken": string,
+            //     "regionCode": string,
+            //     "pageInfo": {
+            //       "totalResults": integer,
+            //       "resultsPerPage": integer
+            //     },
+            //     "items": [
+            //       search Resource
+            //     ]
+            //  }
+
+            $.each(data.items, function (i, item) {
+                // Get Output
+                var output = getOutput(item);
+
+                // Display results
+                $('#results').append(output);
+            });
+
+            // Button
+            var buttons = getButtons(prevPageToken, nextPageToken);
+            // Display Buttons
+            $('#buttons').append(buttons);
+
+
+        }
+
+    );
+}
+
 // // Build Output
 function getOutput(item) {
     // infos from data
@@ -120,8 +241,8 @@ function getButtons(prevPageToken, nextPageToken){
     if (!prevPageToken){
         var btnoutput = '<div class="button-container">' + '<button id="next-button" class="paging-button" data-token="' +nextPageToken+'" data-query="'+q+'" onclick="nextPage();">Next Page</button></div>'; 
     } else{
-        var btnoutput = '<div class="button-container">' + '<button id="prev-button" class="paging-button" data-token="' +prevPageToken+'" data-query="'+q+'" onclick="prevPage();">Prev Page</button></div>'; 
+        var btnoutput = '<div class="button-container">' + '<button id="prev-button" class="paging-button" data-token="' +prevPageToken+'" data-query="'+q+'" onclick="prevPage();">Prev Page</button>' + 
+        '<button id="next-button" class="paging-button" data-token="' +nextPageToken+'" data-query="'+q+'" onclick="nextPage();">Next Page</button></div>'; 
     }
     return btnoutput;
 } 
-

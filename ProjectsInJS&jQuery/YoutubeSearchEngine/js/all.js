@@ -190,6 +190,35 @@ function prevPage() {
             //     ]
             //  }
 
+                // 以下為上面 "items": [
+                //    search Resource
+                //  ]裡面的search resource
+            // {
+            //     "kind": "youtube#searchResult",
+            //     "etag": etag,
+            //     "id": {
+            //       "kind": string,
+            //       "videoId": string,
+            //       "channelId": string,
+            //       "playlistId": string
+            //     },
+            //     "snippet": {
+            //       "publishedAt": datetime,
+            //       "channelId": string,
+            //       "title": string,
+            //       "description": string,
+            //       "thumbnails": {
+            //         (key): {
+            //           "url": string,
+            //           "width": unsigned integer,
+            //           "height": unsigned integer
+            //         }
+            //       },
+            //       "channelTitle": string,
+            //       "liveBroadcastContent": string
+            //     }
+            //   }
+
             $.each(data.items, function (i, item) {
                 // Get Output
                 var output = getOutput(item);

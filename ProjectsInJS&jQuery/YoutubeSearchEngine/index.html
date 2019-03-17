@@ -9,6 +9,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/all.js"></script>
 
@@ -39,6 +41,15 @@
     </div>
     <script>
         $('#year').text(new Date().getFullYear());
+    </script>
+    <script>
+        $('[data-fancybox]').fancybox({
+            toolbar: false,
+            smallBtn: true,
+            iframe: {
+                preload: false
+            }
+        })
     </script>
 
 

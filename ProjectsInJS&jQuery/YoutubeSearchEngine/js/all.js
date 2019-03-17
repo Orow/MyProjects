@@ -1,38 +1,38 @@
 // Searchbar Handler
-$(function(){
+$(function () {
     var searchField = $('#query');
     var icon = $('#search-btn');
 
     // Focus Event Handler, 變長
-    $(searchField).on('focus', function(){
+    $(searchField).on('focus', function () {
         $(this).animate({
             // 點擊後變寬,原本width:45%
             width: '100%'
-        },400);
-            // 搜尋按鈕也移動,原本是right:360px
+        }, 400);
+        // 搜尋按鈕也移動,原本是right:360px
         $(icon).animate({
             right: '10px'
-        },400);
+        }, 400);
     });
-    
+
     // Blur Event Handler, 點擊欄位外後縮回
-    $(searchField).on('blur', function(){
-        if (searchField.val() == ""){
+    $(searchField).on('blur', function () {
+        if (searchField.val() == "") {
             $(searchField).animate({
-                width:'45%'
-            },400, function(){});
+                width: '45%'
+            }, 400, function () {});
             $(icon).animate({
-                right:'360px'
-            },400, function(){});
+                right: '360px'
+            }, 400, function () {});
         }
     });
-    $('#search-form').submit(function(e){
+    $('#search-form').submit(function (e) {
         e.preventDefault();
     });
 })
 
 // Search Function
-function search(){
+function search() {
     // clear results
     $('#results').html('');
     $('#buttons').html('');
@@ -42,13 +42,14 @@ function search(){
 
     // Run Get Rquest on API
     $.get(
-        "https://www.googleapis.com/youtube/v3/search",{
-            part:'snippet, id',
+        "https://www.googleapis.com/youtube/v3/search", {
+            part: 'snippet, id',
             q: q,
             type: 'video',
             key: 'AIzaSyC07XWOrx8BPV7BBcXO_-YfrUvnm7LiqfA'
-        }, function (data){
-            var nexyPageToken = data.nextPageToken;
+        },
+        function (data) {
+            var nextPageToken = data.nextPageToken;
             var prevPageToken = data.prevPageToken;
             // Log data
             console.log(data);
@@ -68,7 +69,7 @@ function search(){
             //     ]
             //  }
 
-            $.each(data.items, function(i, item){
+            $.each(data.items, function (i, item) {
                 // Get Output
                 var output = getOutput(item);
 
@@ -76,13 +77,19 @@ function search(){
                 $('#results').append(output);
             });
 
-            }
+            // Button
+            var buttons = getButtons(prevPageToken, nextPageToken);
+            // Display Buttons
+            $('#buttons').append(buttons);
+
+
+        }
 
     );
 }
 
 // // Build Output
-function getOutput(item){
+function getOutput(item) {
     // infos from data
     var videoId = item.id.videoId;
     var title = item.snippet.title;
@@ -93,17 +100,28 @@ function getOutput(item){
 
     // Build Output String
     var output = '<li>' +
-    '<div class="list-left">' +
-    '<img src=" '+thumb+ '">' +
-    '</div>' +
-    '<div class="list-right">' +
-    '<h3>' +title+ '</h3>' +
-    '<small>By <span class="cTitle">' +channelTitle+ '</span> on ' +videoDate+ '</small>' +
-    '<p>' +description+ '<p>' +
-    '</div>' +
-    '</li>' +
-    '<div classs="clearfix"></div>' +
-    '';
+        '<div class="list-left">' +
+        '<img src=" ' + thumb + '">' +
+        '</div>' +
+        '<div class="list-right">' +
+        '<h3>' + title + '</h3>' +
+        '<small>By <span class="cTitle">' + channelTitle + '</span> on ' + videoDate + '</small>' +
+        '<p>' + description + '<p>' +
+        '</div>' +
+        '</li>' +
+        '<div classs="clearfix"></div>' +
+        '';
 
     return output;
 }
+
+// Build the Buttons
+function getButtons(prevPageToken, nextPageToken){
+    if (!prevPageToken){
+        var btnoutput = '<div class="button-container">' + '<button id="next-button" class="paging-button" data-token="' +nextPageToken+'" data-query="'+q+'" onclick="nextPage();">Next Page</button></div>'; 
+    } else{
+        var btnoutput = '<div class="button-container">' + '<button id="prev-button" class="paging-button" data-token="' +prevPageToken+'" data-query="'+q+'" onclick="prevPage();">Prev Page</button></div>'; 
+    }
+    return btnoutput;
+} 
+

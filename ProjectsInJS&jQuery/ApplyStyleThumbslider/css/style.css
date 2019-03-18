@@ -27,11 +27,6 @@ a:hover{
     text-decoration: underline;
 }
 
-p {
-    padding-top: 10px;
-    text-align: center;
-}
-
 header {
     background: url(../img/panel.jpg) repeat-x bottom center #ffffff;
     height: 30px;
@@ -82,12 +77,8 @@ header {
     overflow: hidden;
 }
 
-#menu li.active, #menu li.active:hover {
+#menu li.active, #menu li a:hover {
     background: url(../img/active_bg.png) no-repeat;
-}
-
-#menu li.active {
-    cursor: default;
 }
 
 #menu .sep {
@@ -101,8 +92,4 @@ header {
     background: url(../img/seperator.png) no-repeat right;
     height: 35px;
     padding-top:10px;
-}
-
-#menu a img{
-	border:none;
 }

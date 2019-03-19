@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Plugin Example</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    <script src="jQuery.linkit/jQuery.linkit.js"></script>
+</head>
+<body>
+    <h1>LinkIt Demo</h1>
+    <p>This is the jQuery LinkIt plugin demo. Let's make <span>this text</span> into a link</p>
+
+    <script>
+        $(document).ready(function(){
+            $('span').linkIt({
+                // whatever: 'anything' // 搭配js file中的whatever:null
+                href: 'http://test.com',
+                text: 'Click me',
+                target: '_blank'
+            });
+        });
+    </script>
+
+</body>
+</html>

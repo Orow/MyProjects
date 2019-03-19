@@ -4,7 +4,8 @@ $(document).ready(function(){
     var positions = new Array();
 
     $('#slides .slide').each(function(i){
-        // Get slider width
+        // Get slider widths, 用float:left=>所以變水平方向
+        // 四張圖是水平slide,是用長度(寬)來算
         positions[i] = totalWidth;
         totalWidth += $(this).width();
 
@@ -27,10 +28,10 @@ $(document).ready(function(){
         var pos = $(this).parent().prevAll('.product').length;
 
         $('#slides').stop().animate({marginLeft:-positions[pos]+'px'}, 450);
-        // Prevent default
+        // Prevent default - a 的跳轉連結
         e.preventDefault();
 
-        // Stop autoScroll
+        // Stop autoScroll, 從click當下那個元素開始重新計算interval時間
         if(!autoScroll) clearInterval(itvl);
     });
 
@@ -43,7 +44,7 @@ $(document).ready(function(){
         if(current == -1){
             return false;
         }
-
+        // .eq(1,2,3,0)依序的值 => 第一個a要執行a陣列[1]的click就會滑到a[1],以此類推
         $('#menu ul li a').eq(current%$('#menu ul li a').length).trigger('click',[true]);
         current++;
     }

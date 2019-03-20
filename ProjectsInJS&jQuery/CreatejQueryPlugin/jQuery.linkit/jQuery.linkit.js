@@ -6,6 +6,7 @@
  */
 
  (function($){
+    //  fn後接plugin名稱
     $.fn.linkIt = function(options){
         // alert(this.html());  //it is no needs to use $(this).html()
 
@@ -28,10 +29,11 @@
             var object = $(this);
 
             if(settings.text == null){
-                settings.text == object.text();
+                settings.text = object.text();
             }
             object.wrap('<a target="'+settings.target+'" href="'+settings.href+'"></a>').text(settings.text);
         });
         
     }
+    // 強制使$是給jQuery使用
  }(jQuery)); 

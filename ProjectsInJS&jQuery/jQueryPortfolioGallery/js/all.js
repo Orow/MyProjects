@@ -53,13 +53,12 @@ $(document).ready(function(){
 
     // Mouseleave overlay
     $('ul#gallery li').on('mouseleave',function(){
-        // Create overlay div
-        $(this).append('<div class="overlay"></div>');
         // Get the overlay div
         var overlay = $(this).children('.overlay');
 
-        // Fade out overlay
-        overlay.fadeOut(500);
-
+        // Fade out overlay & Remove overlay
+        overlay.stop().fadeOut(500,function(){
+            $(this).remove();
+        });
     });
 });

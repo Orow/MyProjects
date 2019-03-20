@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    line-height: 1.6em;
+    color: #666;
+}
+
+a {
+    text-decoration: none;
+    color: #666;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+    overflow: auto;
+}
+
+header {
+    min-height: 55px;
+    background: #333;
+    color: #fff;
+}
+
+header a {
+    color: #fff;
+}
+
+/* 以下Navbar CSS 含float */
+.logo {
+    float: left;
+    margin-top: 15px;
+    width: 30%;
+}
+
+nav {
+    float: right;
+    width: 70%;
+}
+
+nav ul {
+    float: right;
+}
+
+nav li {
+    list-style: none;
+    float: left;
+    padding: 0 10px;
+}
+
+/* nav a {
+    color: #fff; //不需要, header a 已經設定過
+    padding-bottom: 5px; //沒用, 這裡已經float
+} */
+
+/* 以上Navbar CSS */
+
+nav li.current a,
+nav a:hover {
+    color: #03899c;
+    border-bottom: 3px solid #03899c;
+}
+
+section {
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.tagline {
+    background: #03899c;
+    color: #fff;
+}
+
+.tagline h1 {
+    text-align: center;
+    font-size: 35px;
+}
+
+#gallery {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+#gallery li {
+    display: block;
+    float: left;
+    width: 23%;
+    cursor: pointer;
+    border-radius: 5px;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 12px 7px 0;
+}
+
+#gallery img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+footer {
+    background: #03899c;
+    text-align: center;
+    color: #fff;
+    padding: 5px 0;
+}

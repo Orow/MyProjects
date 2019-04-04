@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+}
+
+header h1 {
+    background: #3292a6;
+    color: #fff;
+    padding: 20px 10px;
+    text-align: center;
+
+}
+
+.container {
+    width: 750px;
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 100%;
+    }
+}

@@ -2,11 +2,11 @@
 // var xhr =new XMLHttpRequest();
 
 // // readtState 
-// // 0 - 已經產生一個XMLHttpRequest,但還沒有連結要撈的資料
-// // 1 - 用了open()，但還沒有把資料傳送過去
-// // 2 - 偵側到用了send
-// // 3 - loading
-// // 4 - 撈到資料,數據完全接收到了
+// // - 0 - (request not initialized)已經產生一個XMLHttpRequest，但還沒有連結要撈的資料。
+// // - 1 - (server connection established)用了open()，但還沒有把資料傳送過去。
+// // - 2 - (request received)偵側到用了send。
+// // - 3 - (processing request)資訊處理中。
+// // - 4 - (request finished and response is ready)撈到資料，數據完全接收到了。
 
 // // 格式,要讀取的網址,同步與非同步
 // // 格式: get(讀取), post(傳送資料到伺服器)

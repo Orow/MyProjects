@@ -18,10 +18,10 @@ header h1 {
 }
 
 .container {
-    width: 750px;
+    width: 600px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .container {
         width: 100%;
     }

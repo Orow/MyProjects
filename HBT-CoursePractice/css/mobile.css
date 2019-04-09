@@ -40,7 +40,7 @@
 
 /* About info */
 #about-info .info-right, #about-info .info-left  {
-    float: noene;
+    float: none;
     width: 100%;
 }
 

@@ -59,15 +59,15 @@
 // status = 404 資料讀取錯誤,沒有撈到
 
 //  ----Post寫法----
-var xhr = new XMLHttpRequest();
+// var xhr = new XMLHttpRequest();
 
-// post(傳送資料到後端伺服器)
-// Hexschool AJAX practice: https://github.com/hexschool/nodejs_ajax_tutorial
-xhr.open('post','https://hexschool-tutorial.herokuapp.com/api/signup',true);
+// // post(傳送資料到後端伺服器)
+// // Hexschool AJAX practice: https://github.com/hexschool/nodejs_ajax_tutorial
+// xhr.open('post','https://hexschool-tutorial.herokuapp.com/api/signup',true);
 
-// request type to backend-sever
-xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-xhr.send('email=abcde1111@gmail.com&password=12345');
+// // request type to backend-sever
+// xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+// xhr.send('email=abcde1111@gmail.com&password=12345');
 
 // post寫法,資料用json格式
 // var account ={
@@ -98,6 +98,7 @@ function signup() {
     xhr.setRequestHeader('Content-type', 'application/json')
     var data = JSON.stringify(account);
     xhr.send(data);
+    console.log(xhr);
     // 因為var xhr寫在function中是區域變數,所以function執行完後,單獨執行xhr會變成not defined  
     xhr.onload = function () {
         var callBackData = JSON.parse(xhr.responseText);
@@ -111,6 +112,7 @@ function signup() {
             alert('帳號註冊失敗!!');
         }
     }
+    
 }
 
 // ----AJAX sample login----

@@ -19,14 +19,16 @@ $(document).ready(function(){
     $('#slides').width(totalWidth);
 
     // Menu item click handler
-    $('#menu ul li a').click(function(e, keepscroll){
+    $('#menu ul li a').click(function(e){
         // Remove active class and add inactive class
         $('li.product').removeClass('active').addClass('inactive');
         // Add active class to parent
         $(this).parent().addClass('active');
 
+        // 長度：點擊a的父元素"之前的所有class=producta"的元素
         var pos = $(this).parent().prevAll('.product').length;
 
+        // 負值的margin-left才會使區塊往右移動
         $('#slides').stop().animate({marginLeft:-positions[pos]+'px'}, 450);
         // Prevent default - a 的跳轉連結
         e.preventDefault();

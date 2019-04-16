@@ -43,9 +43,9 @@ function search() {
     // Run Get Rquest on API
     $.get(
         "https://www.googleapis.com/youtube/v3/search", {
-            part: 'snippet, id',
-            q: q,
-            type: 'video',
+            part: 'snippet, id', // 搜尋的每一筆結果所帶出的資料
+            q: q,  // 輸入的關鍵字的值
+            type: 'video', // 選擇獲取video type
             key: 'AIzaSyC07XWOrx8BPV7BBcXO_-YfrUvnm7LiqfA'
         },
         function (data) {
@@ -104,8 +104,8 @@ function nextPage() {
     $.get(
         "https://www.googleapis.com/youtube/v3/search", {
             part: 'snippet, id',
-            q: q,
-            pageToken: token,
+            q: q, // 輸入關鍵字區塊的值
+            pageToken: token, // 需要是回傳的nextPageToken或prevPageToken字串
             type: 'video',
             key: 'AIzaSyC07XWOrx8BPV7BBcXO_-YfrUvnm7LiqfA'
         },
@@ -164,9 +164,9 @@ function prevPage() {
     $.get(
         "https://www.googleapis.com/youtube/v3/search", {
             part: 'snippet, id',
-            q: q,
-            pageToken: token,
-            type: 'video',
+            q: q, // 輸入關鍵字區塊的值
+            pageToken: token, // 需要是回傳的nextPageToken或prevPageToken字串
+            type: 'video', 
             key: 'AIzaSyC07XWOrx8BPV7BBcXO_-YfrUvnm7LiqfA'
         },
         function (data) {
@@ -238,7 +238,7 @@ function prevPage() {
     );
 }
 
-// // Build Output
+// Build Output
 function getOutput(item) {
     // infos from data
     var videoId = item.id.videoId;

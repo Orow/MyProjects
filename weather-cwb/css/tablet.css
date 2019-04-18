@@ -1,9 +1,6 @@
 #border-bottom {
   width: 85%;
 }
-.weather-items {
-  justify-content: space-between;
-}
 
 .weather-item {
   width: 46%;

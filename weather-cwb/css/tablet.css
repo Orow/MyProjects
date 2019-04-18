@@ -2,9 +2,9 @@
   width: 85%;
 }
 .weather-items {
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .weather-item {
-  width: 40%;
+  width: 46%;
 }

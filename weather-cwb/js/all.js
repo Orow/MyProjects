@@ -1,12 +1,10 @@
 $(document).ready(function() {
   const URI =
     "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-23657188-F80E-42A7-A592-8F0EB8D62E33";
-
-  $(".select").change(function(e) {
+    $(".select").change(function(e) {
     // console.log(e);
     let select = e.target.value;
     // console.log(select);
-
     $.ajax({
       url: URI,
       success: function(infos) {
@@ -16,16 +14,16 @@ $(document).ready(function() {
         // console.log(location);
         $.each(location, function(index, value) {
           let weaStatus =
-            value.weatherElement[0].time[1].parameter.parameterName;
-          let weaDate = value.weatherElement[0].time[1].startTime;
+            value.weatherElement[0].time[0].parameter.parameterName;
+          let weaDate = value.weatherElement[0].time[0].startTime;
           weaDate = weaDate.substring(0, 11);
         //   console.log(weaDate);
           let weaRainPercent =
-            value.weatherElement[1].time[1].parameter.parameterName + "%";
+            value.weatherElement[1].time[0].parameter.parameterName + "%";
           let weaMinT =
-            value.weatherElement[2].time[1].parameter.parameterName;
+            value.weatherElement[2].time[0].parameter.parameterName;
           let weaMaxT =
-            value.weatherElement[4].time[1].parameter.parameterName;
+            value.weatherElement[4].time[0].parameter.parameterName;
           let cityWeather =
             '<div class="weather-item"><div class="wea-title"><h3 class="city-name">' +
             value.locationName +
@@ -63,12 +61,8 @@ $(document).ready(function() {
             if (value.locationName == "高雄市") {
               str += cityWeather;
             }
-            // str += cityWeather;
           }
-          $(".weather-items")
-            .hide()
-            .html(str)
-            .fadeIn(400);
+          $(".weather-items").hide().html(str).fadeIn(400);
         });
       }
     });

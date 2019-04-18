@@ -9,6 +9,8 @@ body {
   line-height: 1.4;
   width: 80%;
   margin: 0 auto;
+  background: url(../img/lake.jpg) no-repeat center center/cover;
+  height: 100%;
 }
 
 p {
@@ -27,7 +29,7 @@ header .select-area .select {
 }
 
 #border-bottom {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     border-bottom: #444 dotted 1px;
 }
@@ -48,12 +50,12 @@ header .select-area .select {
   max-width:1000px;
 }
 .weather-item {
-  background: rgba(63, 141, 98, 0.37);
+  
   border: 1px #333 solid;
   border-radius: 10px;
   width: 30%;
-  margin: 15px 10px;
-  
+  margin: 10px 10px;
+  height:100%;
 }
 
 /* Weather title */
@@ -61,7 +63,9 @@ header .select-area .select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(75, 125, 206, 0.445);
+  background: rgb(228, 219, 219);
+  opacity: 0.8;
+  /* background: rgba(75, 125, 206, 0.445); */
   border-radius: 10px 10px 0 0;
   border-bottom: #444 dashed 1px;
   padding: 10px;
@@ -74,12 +78,15 @@ header .select-area .select {
 
 /* Weather-content */
 .weather-item .wea-content {
-  padding: 10px;
+  padding: 10px 20px;
+  background: rgba(110, 157, 184, 0.726);
+  border-radius: 0 0 10px 10px;
+  
 }
 
-.weather-item:hover {
+.wea-content:hover {
 cursor: pointer;
-background: yellow;
-opacity: 0.8;
-border-radius: 10px;
+background: rgba(255, 255, 0, 0.404);
+opacity: 1;
+border-radius: 0 0 10px 10px;
 }

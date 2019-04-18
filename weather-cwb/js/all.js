@@ -1,6 +1,7 @@
 $(document).ready(function() {
   const URI =
     "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-23657188-F80E-42A7-A592-8F0EB8D62E33";
+    
     $(".select").change(function(e) {
     // console.log(e);
     let select = e.target.value;
@@ -67,4 +68,5 @@ $(document).ready(function() {
       }
     });
   });
+  $(".select").val('all').trigger('change');
 });

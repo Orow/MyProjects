@@ -1,0 +1,17 @@
+header h1{
+    min-width:260px;
+}
+
+header .select-area .select {
+  width: 68%;
+  min-width:100px;
+}
+
+#border-bottom {
+    width: 80%;
+  }
+
+.weather-item {
+  width: 80%;
+  min-width:280px;
+}

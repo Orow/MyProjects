@@ -1,0 +1,10 @@
+#border-bottom {
+  width: 85%;
+}
+.weather-items {
+  justify-content: center;
+}
+
+.weather-item {
+  width: 40%;
+}

@@ -14,7 +14,7 @@ weatherConditions.send(null);
 weatherConditions.onload = function() {
     if (weatherConditions.status === 200){
         cObj = JSON.parse(weatherConditions.responseText); 
-        console.log(cObj); 
+        // console.log(cObj); 
 
         // area of taipei
         var taipeiDaan = cObj.records.location[0].parameter[0].parameterValue + " " + cObj.records.location[0].parameter[2].parameterValue;
@@ -34,7 +34,7 @@ weatherConditions.onload = function() {
 }; //end function
 
 
-// GET THE FORECARST
+// GET THE FORECAST
 weatherForecast.open('get', 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-061?Authorization=CWB-23657188-F80E-42A7-A592-8F0EB8D62E33&limit=1&offset=7', true);
 weatherForecast.responseType = 'text'; 
 weatherForecast.send();
@@ -42,7 +42,7 @@ weatherForecast.send();
 weatherForecast.onload = function() {
 if (weatherForecast.status === 200){
 	fObj = JSON.parse(weatherForecast.responseText);
-    console.log(fObj);
+    // console.log(fObj);
     // title
     var area_raw = fObj.records.locations[0].datasetDescription;
     area_raw = area_raw.substring(7,17) + area_raw.substring(21);
@@ -80,7 +80,6 @@ if (weatherForecast.status === 200){
     var rainPrecent = fObj.records.locations[0].location[0].weatherElement[7].time[2].elementValue[0].value
     
 
-    document.getElementById('area').innerHTML ='臺北市大安區' + area_raw;
     document.getElementById('r2c1').innerHTML = date_raw;
     document.getElementById('r2c2').innerHTML= weatherSituation;
     document.getElementById('r2c3').innerHTML = currentTemp + "&deg";

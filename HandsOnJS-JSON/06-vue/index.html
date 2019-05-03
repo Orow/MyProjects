@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue-Weather Channel</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,400,700" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <figure class="wu"><img src="images/weatherLogo.png"></figure>
+            <h1>臺北市大安區未來3天(72小時)天氣預報</h1>
+            <h2>JSON data from 中央氣象局</h2>
+        </header>
+        <main>
+            <section id="left">
+                <div id="location">{{location}}</div>
+                <div id="station">{{station}}</div>
+                <div id="temperature">{{temperature}}</div>
+                <div id="desc">{{desc}}</div>
+            </section>
+            <section id="right">
+                <div>
+                    <span>日期</span>
+                    <span>天氣現象</span>
+                    <span>溫度</span>
+                    <span>6小時降雨機率</span>
+                </div>
+                <template v-for="weaInfo in weaInfos">
+                    <div>
+                        <span>{{weaInfo.date}}</span>
+                        <span>{{weaInfo.situation}}</span>
+                        <span>{{weaInfo.temp}}&deg</span>
+                        <span>{{weaInfo.rainPrecent}}%</span>
+                    </div>
+                </template>
+            </section>
+        </main>
+        <footer>
+            <p>&bull;Orow Chou &bull; By Vue.js</p>
+        </footer>
+    </div>
+
+    <script>
+        const currentURL =
+            'https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-23657188-F80E-42A7-A592-8F0EB8D62E33&limit=1&offset=10';
+        const forecastURL =
+            'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-061?Authorization=CWB-23657188-F80E-42A7-A592-8F0EB8D62E33&limit=1&offset=7';
+        new Vue({
+            el: '#wrapper',
+            data: {
+                location: '',
+                station: '',
+                temperature: '',
+                desc: '',
+                weaInfos: [],
+            },
+            mounted() {
+                $.get(currentURL)
+                    .then(currentWeather => {
+                        let currentArea = currentWeather.records.location[0];
+                        // console.log(currentArea);
+                        let location =
+                            `${currentArea.parameter[0].parameterValue} ${currentArea.parameter[2].parameterValue}`;
+                        let station = `站別：${currentArea.locationName}`;
+                        let temperature = currentArea.weatherElement[3].elementValue;
+                        let description = `Wind Speed: ${currentArea.weatherElement[2].elementValue}`;
+                        this.location = location;
+                        this.station = station;
+                        this.temperature = temperature;
+                        this.desc = description;
+                    });
+                $.get(forecastURL)
+                    .then(forecastWeather => {
+                        let forecastArea = forecastWeather.records.locations[0].location[0];
+
+                        let date1 = forecastArea.weatherElement[1].time[3].startTime.substring(5, 11);
+                        let situation1 = forecastArea.weatherElement[1].time[3].elementValue[0].value;
+                        let temp1 = forecastArea.weatherElement[3].time[3].elementValue[0].value;
+                        let rainPrecent1 = forecastArea.weatherElement[7].time[2].elementValue[0].value;
+                        let firstDay = {
+                            date: date1,
+                            situation: situation1,
+                            temp: temp1,
+                            rainPrecent: rainPrecent1
+                        };
+                        this.weaInfos.push(firstDay);
+                        // console.log(this.weaInfos);
+
+                        let date2 = forecastArea.weatherElement[1].time[11].startTime.substring(5, 11);
+                        let situation2 = forecastArea.weatherElement[1].time[11].elementValue[0].value;
+                        let temp2 = forecastArea.weatherElement[3].time[11].elementValue[0].value;
+                        let rainPrecent2 = forecastArea.weatherElement[7].time[6].elementValue[0].value;
+                        let secondDay = {
+                            date: date2,
+                            situation: situation2,
+                            temp: temp2,
+                            rainPrecent: rainPrecent2
+                        };
+                        this.weaInfos.push(secondDay);
+                        // console.log(this.weaInfos);
+
+                        let date3 = forecastArea.weatherElement[1].time[19].startTime.substring(5, 11);
+                        let situation3 = forecastArea.weatherElement[1].time[19].elementValue[0].value;
+                        let temp3 = forecastArea.weatherElement[3].time[19].elementValue[0].value;
+                        let rainPrecent3 = forecastArea.weatherElement[7].time[10].elementValue[0].value;
+                        let thirdDay = {
+                            date: date3,
+                            situation: situation3,
+                            temp: temp3,
+                            rainPrecent: rainPrecent3
+                        };
+                        this.weaInfos.push(thirdDay);
+                        console.log(this.weaInfos);
+                    });
+            },
+        });
+    </script>
+</body>
+
+</html>

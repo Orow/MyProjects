@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue -My Projects</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+    <style>
+        html,
+        body {
+            font-family: Arial, Microsoft JhengHei;
+        }
+
+        h1 {
+            font-size: 18px;
+        }
+
+        a {
+            color: #369;
+            text-decoration: none;
+        }
+
+        .teacher {
+            font-size: 12px;
+        }
+        
+
+        .lesson {
+            display: inline-block;
+            width: 240px;
+            border-radius: 8px;
+            margin: 12px;
+            padding: 8px;
+            position: relative;
+            height: 100px;
+            padding-top: 150px;
+            /* 圖片破壞圓角 */
+            overflow: hidden;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .image {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center center;
+            top: 0;
+            left: 0;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div v-for="lesson in lessons" class="lesson">
+            <!-- <img :src="lesson.img" height="100"> -->
+            <div class="image" :style="imgStyle(lesson.img)"></div>
+            <a :href="lesson.url">
+                <h1>{{lesson.title}}</h1>
+            </a>
+            <span class="teacher">{{lesson.teacher}}</span>
+            <a :href="lesson.note">
+                <span>筆記</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                lessons: [],
+            },
+            // 掛載的時候進行ajax獲取json資料
+            mounted() {
+                // fetch搭配then，then中使用箭頭函式
+                fetch('./data.json').then(res => res.json()).then(lessons => this.lessons = lessons);
+            },
+            methods: {
+                imgStyle(img) {
+                    return {
+                        // 'background-image':`url(${img})`,
+                        // Camel case
+                        backgroundImage: `url(${img})`,
+                    }
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>

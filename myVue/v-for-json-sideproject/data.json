@@ -1,0 +1,99 @@
+[
+  {
+    "img": "https://images.cakeresume.com/orow/7bd091b2-abc8-4dd6-85a8-850ba0d7802c.png",
+    "url": "https://orow.github.io/MyProjects/ProjectsInJS&jQuery/YoutubeSearchEngine/index.html",
+    "title": "Youtube Search Engine",
+    "teacher": "AJAX-jQuery",
+    "note": "https://orow.github.io/2019/03/16/jQuery-youtube-search/"
+  },
+  {
+    "img": "https://images.cakeresume.com/orow/647511f0-84a1-4a58-b04f-b84a6299844c.png",
+    "url": "https://orow.github.io/MyProjects/weather-cwb/index.html",
+    "title": "縣市天氣預報",
+    "teacher": "AJAX-jQuery"
+  },
+  {
+    "img": "https://images.cakeresume.com/orow/0a09fe17-ddfa-4b5d-89a6-1adf7cad091f.png",
+    "url": "https://orow.github.io/MyProjects/HandsOnJS-JSON/05-tw-weather/index.html",
+    "title": "氣象即時資訊",
+    "teacher": "AJAX-JavaScript",
+    "note": "https://orow.github.io/2019/04/06/DaanWeather/"
+  },
+  {
+    "img": "https://images.cakeresume.com/orow/3080ba83-2c06-4fae-a8f6-2bc1bacdc671.png",
+    "url": "https://orow.github.io/MyProjects/ProjectsInJS&jQuery/jQueryPortfolioGallery/index.html",
+    "title": "Photos Gallery",
+    "teacher": "jQuery",
+    "note": "https://orow.github.io/2019/03/21/photosGallery/"
+  },
+  {
+    "img": "https://images.cakeresume.com/orow/1817b7bf-4650-4c1b-a0b2-8abd21552dc9.png",
+    "url": "https://orow.github.io/MyProjects/ProjectsInJS&jQuery/jQueryContentSlider/ContentSlider/index.html",
+    "title": "ContentSlider",
+    "teacher": "jQuery",
+    "note": "https://orow.github.io/2019/03/14/jQuery-content-slider/"
+  },
+  {
+    "img": "https://images.cakeresume.com/orow/5b6d67d0-702f-4aea-a46e-9b2b7033fb7c.png",
+    "url": "https://orow.github.io/MyProjects/ProjectsInJS&jQuery/TicTacToeGame/index.html",
+    "title": "Tic Tac Toe",
+    "teacher": "jQuery",
+    "note": "https://orow.github.io/2019/03/21/tictactoe/"
+  },
+  {
+    "img": "https://images.cakeresume.com/orow/ea999530-321a-46b4-a889-208bd22e745b.png",
+    "url": "https://orow.github.io/MyProjects/ProjectsInJS&jQuery/SimpleJavascriptQuiz/index.html",
+    "title": "Simple JS Quiz ",
+    "teacher": "JavaScript",
+    "note": "https://orow.github.io/2019/03/14/simple-js-quiz/"
+  },
+  {
+    "img": "https://images.cakeresume.com/orow/3a7a6c12-dd10-4572-83cb-61f37f6c18e2.png",
+    "url": "https://orow.github.io/MyProjects/ProjectsInJS&jQuery/FAQAccordionSlider/index.html",
+    "title": "FAQ Accordion",
+    "teacher": "jQuery",
+    "note": "https://orow.github.io/2019/03/18/jQuery-faq-slider/"
+  },
+  {
+    "img": "https://images.cakeresume.com/orow/ae21dae2-f4b7-46bd-b0a1-7524ca902d77.png",
+    "url": "https://orow.github.io/MyProjects/HBT-CoursePractice/index.html",
+    "title": "Hotel BT",
+    "teacher": "網頁切版-手刻",
+    "note": "https://orow.github.io/2019/01/29/Note-HotelBT/"
+  },
+  {
+    "img": "https://images.cakeresume.com/orow/d9ed2115-c1b4-4cf5-836e-59adc66beb6e.png",
+    "url": "https://orow.github.io/MyProjects/EdgeLedger-CoursePractice/index.html",
+    "title": "EdgeLedger",
+    "teacher": "網頁切版-手刻",
+    "note": "https://orow.github.io/2019/02/01/Note-EdgeLedger/"
+  },
+  {
+    "img": "https://images.cakeresume.com/orow/345702df-c563-41f7-b8a1-dc6b0d49329c.png",
+    "url": "https://orow.github.io/MyProjects/BootstrapWith5Projects/Glozzom-Practice/index.html",
+    "title": "Glozzom",
+    "teacher": "網頁切版-Bootstrap",
+    "note": "https://orow.github.io/2019/03/03/Note-Glozzom/"
+  },
+  {
+    "img": "https://images.cakeresume.com/orow/3d62975e-784e-4c7a-b4a1-8bf0d06581f9.png",
+    "url": "https://orow.github.io/MyProjects/BootstrapWith5Projects/Blogen-Practice/index.html",
+    "title": "Blogen",
+    "teacher": "網頁切版-Bootstrap",
+    "note": "https://orow.github.io/2019/03/05/Note-Blogen/"
+  },
+  {
+    "img": "https://images.cakeresume.com/orow/37fda232-4842-4d50-a132-3fc82189a446.png",
+    "url": "https://orow.github.io/MyProjects/BootstrapWith5Projects/MizuxeBook-Practice/index.html",
+    "title": "MizuxeBook",
+    "teacher": "網頁切版-Bootstrap",
+    "note": "https://orow.github.io/2019/02/12/Note-MizuxeBook/"
+  },
+  {
+    "img": "https://images.cakeresume.com/orow/0064274e-ced1-4115-af16-86b10482ca20.png",
+    "url": "https://orow.github.io/MyProjects/BootstrapWith5Projects/LoopLab-Practice/index.html",
+    "title": "LoopLAB",
+    "teacher": "網頁切版-Bootstrap",
+    "note": "https://orow.github.io/2019/02/13/Note-LoopLAB/"
+  }
+]
